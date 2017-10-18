@@ -1,0 +1,35 @@
+Supported OpenCart Versions:
+================
+2.x versions
+
+Demo: <a href=http://opencart.ostwork.com/opencart2.1>Front End Home</a>
+Demo: <a href=http://opencart.ostwork.com/opencart2.1/index.php?route=product/category&path=20>Front End Category</a>
+Demo: <a href=http://opencart.ostwork.com/opencart2.1/index.php?route=product/search&search=pr>Front End Search Page</a>
+Demo: <a href=http://opencart.ostwork.com/opencart2.1/index.php?route=product/special>Special Products</a>
+Demo: <a href=http://opencart.ostwork.com/opencart2.1/index.php?route=product/manufacturer/info&manufacturer_id=8>Manufacturer Products</a>
+
+Price Filter Module is used to to apply filtering for products based on price in slots as you select price filter.
+
+
+Features of Price Filter extension
+- Support responsive themes
+- Compatible with SEO URLs
+- Support pages: Pages(Category,special products,search,manufacturer)
+- Support Multi Language
+- Auto price and Manual Price Options
+
+Main Feature of Price Filter extension
+- Price Slots functionality(Price can be choosed in slots as "0-200","400-600" etc)
+
+
+Support:
+==============
+In case of any query or support please email at sales@opensourcetechnologies.com
+
+
+Installation Instructions
+
+1.Copy and paste files to your opencart directory
+2.Install module using Extensions=>Module=>Price Filter
+3.Assign Position on following pages as ("product/category", "product/search","product/special","product/manufacturer/info")
+3.Thats All!
