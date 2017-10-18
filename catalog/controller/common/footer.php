@@ -8,10 +8,10 @@ class ControllerCommonFooter extends Controller {
 
         $this->document->setTitle($this->language->get('heading_title'));
         $this->load->language('account/newsletter');
-        if ($this->request->server['REQUEST_METHOD'] == 'POST') {
+        if ($this->request->server['REQUEST_METHOD'] == 'POST' && isset($_POST['customerEmail'])) {
             $this->load->model('account/customer');
             
-            $this->model_account_customer->addNewsLetter($this->request->post['email']);
+            $this->model_account_customer->addNewsLetter($this->request->post['customerEmail']);
 
             $this->session->data['success'] = $this->language->get('text_success');
 

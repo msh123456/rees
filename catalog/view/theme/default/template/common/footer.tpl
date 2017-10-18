@@ -69,7 +69,7 @@
             <form method="post" action="<?php echo $footer_url; ?>">
                 <p>  <strong>NEWS LETTER</strong> </p>
                 <input class="input footerBtn" type="submit" value="SIGN UP">
-                <input class="myinput" type="email" name="email" placeholder="Email address" style="text-align: left">
+                <input class="myinput" type="email" name="customerEmail" placeholder="Email address" style="text-align: left">
 
             </form>
         </div>

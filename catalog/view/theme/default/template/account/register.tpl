@@ -12,13 +12,7 @@
         </div>
 
     </div>
-
-
-
-
-
-
-    <div id="content" class="<?php echo $class; ?>" > <?php echo $content_top; ?>"
+    <div id="content" class="<?php echo $class; ?>" > <?php echo $content_top; ?>
         <h1 class="text-center register_title"><?php echo $heading_title; ?></h1>
         <p class="text-center"><?php echo $text_account_already; ?></p>
         <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal register_form">
