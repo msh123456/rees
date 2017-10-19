@@ -2,6 +2,29 @@
 
 class ControllerCommonHeader extends Controller
 {
+    public function searchAjax()
+    {
+        $this->load->model("catalog/product");
+        $searchText = $_POST['searchText'];
+        if($searchText=="") {echo""; die();}
+        $filter['filter_name'] = "%$searchText%";
+        $products = $this->model_catalog_product->getProducts($filter);
+        $html = "";
+        if (count($products) == 0)
+            $html .= '<li><a style="color: red">موردی یافت نشد</a></li>';
+        else
+            foreach ($products as $product) {
+                $html .= '<li><a href="'
+                    . $_SERVER["SCRIPT_NAME"]
+                    . '/?route=product/product&product_id='
+                    . $product["product_id"]
+                    . '">'
+                    . $product["name"]
+                    . '</a></li>';
+            }
+        echo $html;
+    }
+
     public function index()
     {
 

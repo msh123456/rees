@@ -91,10 +91,10 @@ function change_price_clicked(){
 $(document).ready(function(){
 
 $("#search_header").focusin(function() {
-	$(this).animate({ width: '120' }, 'slow');
+	//$(this).animate({ width: '120' }, 'slow');
 });
 $("#search_header").focusout(function() {
-	$(this).animate({ width: '90' }, 'slow');
+	//$(this).animate({ width: '90' }, 'slow');
 });
 $( ".first" ).each(function( index ) {
 	      $( this ).click();
