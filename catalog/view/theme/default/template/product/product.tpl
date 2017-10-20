@@ -260,7 +260,7 @@
             </div>
 
 
-            <h4 style="margin-top: 35px;">توضیحات</h4>
+            <!--<h4 style="margin-top: 35px;">توضیحات</h4>-->
             <div class="explain">
                 <p>
                 <div class="<?php echo $class; ?>">

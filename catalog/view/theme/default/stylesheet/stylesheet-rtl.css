@@ -99,7 +99,11 @@ label {
     font-weight: normal;
 }
 
-select.form-control, textarea.form-control, input[type="text"].form-control, input[type="password"].form-control, input[type="datetime"].form-control, input[type="datetime-local"].form-control, input[type="date"].form-control, input[type="month"].form-control, input[type="time"].form-control, input[type="week"].form-control, input[type="number"].form-control, input[type="email"].form-control, input[type="url"].form-control, input[type="search"].form-control, input[type="tel"].form-control, input[type="color"].form-control {
+select.form-control, textarea.form-control, input[type="text"].form-control, input[type="password"].form-control,
+input[type="datetime"].form-control, input[type="datetime-local"].form-control, input[type="date"].form-control,
+input[type="month"].form-control, input[type="time"].form-control, input[type="week"].form-control, input[type="number"].form-control,
+input[type="email"].form-control, input[type="url"].form-control,
+input[type="search"].form-control, input[type="tel"].form-control, input[type="color"].form-control {
     font-size: 12px;
 }
 
@@ -268,6 +272,14 @@ div.required .control-label:before {
     #cart .dropdown-menu li > div {
         min-width: 100%;
     }
+}
+.namad{
+    width: 99px;
+    height: 151px;
+}
+.gif{
+    width: 8%;
+    margin-top:15%;
 }
 
 #cart .dropdown-menu li p {
@@ -1027,7 +1039,7 @@ h2.price {
     padding-top: 49px;
     padding-bottom: 47px;
     position: absolute;
-    top: 30%;
+    top: 28%;
     width: 95%;
     z-index: 999;
 }
@@ -1526,7 +1538,7 @@ label[disabled="disabled"] {
 }
 
 .searchImgHeader {
-    margin: 6px 10px 0 0;
+    margin: 6px 20px 0 0;
     width: 20px;
 }
 
@@ -1552,6 +1564,11 @@ label[disabled="disabled"] {
     position: relative;
     margin: 0 auto;
     width: 300px;
+    display: inline;
+}
+.search input:focus{
+    border: none !important;
+
 }
 
 .search input {
@@ -1584,7 +1601,7 @@ label[disabled="disabled"] {
     margin: 0;
     padding: 0;
     position: absolute;
-    right: 4px;
+    right: 0px;
     top: 24px;
     z-index: 10;
     max-height:300px;
@@ -1624,5 +1641,6 @@ label[disabled="disabled"] {
 
 
 
+/***********************************
 
 

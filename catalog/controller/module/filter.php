@@ -6,13 +6,17 @@ class ControllerModuleFilter extends Controller {
 		} else {
 			$parts = array();
 		}
-
+        if ($this->request->server['HTTPS']) {
+            $server = $this->config->get('config_ssl');
+        } else {
+            $server = $this->config->get('config_url');
+        }
 		$category_id = end($parts);
 
 		$this->load->model('catalog/category');
 
 		$category_info = $this->model_catalog_category->getCategory($category_id);
-
+        $data['loadingGifSrc']=$server."/image/loading.gif";
 		if ($category_info) {
 			$this->load->language('module/filter');
 

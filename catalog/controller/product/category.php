@@ -1,8 +1,10 @@
 <?php
 
-class ControllerProductCategory extends Controller {
+class ControllerProductCategory extends Controller
+{
 
-    public function index() {
+    public function index()
+    {
         $this->load->language('product/category');
 
         $this->load->model('catalog/category');
@@ -26,8 +28,6 @@ class ControllerProductCategory extends Controller {
         $data['no_product_background_icon'] = $server . "image/catalog/lol.png";
         $data['product_background_icon'] = $server . "image/catalog/lol2.png";
         $data['search_icon'] = $server . "image/catalog/search.png";
-
-
 
 
         if (isset($this->request->get['filter'])) {
@@ -61,14 +61,14 @@ class ControllerProductCategory extends Controller {
         }
 
 
-
         //*************start
-        if (isset($this->request->get['min'])) {
-            $min = $this->request->get['min'];
+        if (isset($this->request->get['minPrice'])) {
+            $min = $this->request->get['minPrice'];
         }
-        if (isset($this->request->get['max'])) {
-            $max = $this->request->get['max'];
+        if (isset($this->request->get['maxPrice'])) {
+            $max = $this->request->get['maxPrice'];
         }
+
         //*****************end
 
         $data['breadcrumbs'] = array();
@@ -95,15 +95,15 @@ class ControllerProductCategory extends Controller {
 
             $path = '';
 
-            $parts = explode('_', (string) $this->request->get['path']);
+            $parts = explode('_', (string)$this->request->get['path']);
 
-            $category_id = (int) array_pop($parts);
+            $category_id = (int)array_pop($parts);
 
             foreach ($parts as $path_id) {
                 if (!$path) {
-                    $path = (int) $path_id;
+                    $path = (int)$path_id;
                 } else {
-                    $path .= '_' . (int) $path_id;
+                    $path .= '_' . (int)$path_id;
                 }
 
                 $category_info = $this->model_catalog_category->getCategory($path_id);
@@ -207,17 +207,18 @@ class ControllerProductCategory extends Controller {
                 'start' => ($page - 1) * $limit,
                 'limit' => $limit
             );
+            if (isset($min)){
+                $filter_data['minPrice']=$min;
+            }
+            if (isset($max)){
+                $filter_data['minPrice']=$max;
+            }
 
             $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
 
             $results = $this->model_catalog_product->getProducts($filter_data);
 
-            if (isset($min) && isset($max)) {
-                foreach ($results as $result) {
-                    if ($result['price'] > $max || $result['price'] < $min)
-                        unset($results[$result['product_id']]);
-                }
-            }
+
             foreach ($results as $result) {
                 if ($result['image']) {
                     $image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
@@ -231,20 +232,20 @@ class ControllerProductCategory extends Controller {
                     $price = false;
                 }
 
-                if ((float) $result['special']) {
+                if ((float)$result['special']) {
                     $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
                 } else {
                     $special = false;
                 }
 
                 if ($this->config->get('config_tax')) {
-                    $tax = $this->currency->format((float) $result['special'] ? $result['special'] : $result['price']);
+                    $tax = $this->currency->format((float)$result['special'] ? $result['special'] : $result['price']);
                 } else {
                     $tax = false;
                 }
 
                 if ($this->config->get('config_review_status')) {
-                    $rating = (int) $result['rating'];
+                    $rating = (int)$result['rating'];
                 } else {
                     $rating = false;
                 }
@@ -252,6 +253,7 @@ class ControllerProductCategory extends Controller {
                 $options = $this->model_catalog_product->getProductOptions($result['product_id']);
                 $product_images = array();
                 $product_images = $this->model_catalog_product->getProductImages($result['product_id']);
+
                 for ($i = 0; $i < count($product_images); $i++) {
                     $product_images[$i]['image'] = $server . 'image/' . $product_images[$i]['image'];
                 }
@@ -268,7 +270,6 @@ class ControllerProductCategory extends Controller {
                     $data['mojoodi'] = "در انبار";
                     $data['stock'] = $this->language->get('text_instock');
                 }
-
 
 
                 $data['products'][] = array(
@@ -425,6 +426,11 @@ class ControllerProductCategory extends Controller {
             $data['content_bottom'] = $this->load->controller('common/content_bottom');
             $data['footer'] = $this->load->controller('common/footer');
             $data['header'] = $this->load->controller('common/header');
+            if (isset($_GET['ajax'])) {
+
+                $this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/product/productView.tpl', $data));
+                return;
+            }
 
             if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/category.tpl')) {
                 $this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/product/category.tpl', $data));

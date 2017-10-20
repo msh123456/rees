@@ -84,7 +84,7 @@
                         </div>
 
                         <div class="t5">
-                            <h3 class="h3">توضیحات</h3><br>
+<!--                            <h3 class="h3">توضیحات</h3><br>-->
                             <?php echo $product['description']; ?>
                         </div>
                     </div>
@@ -98,6 +98,11 @@
                     <div class="col-md-2" id='get_height<?php echo $product['product_id']; ?>'>
                         <?php
                         $x = 0;
+//                        $productImagesCount=count($product['images']);
+//                        $product['images'][$productImagesCount]['image']=$product['thumb'];
+//                        $temp=$product['images'][0];
+//                        $product['images'][0]=$product['images'][$productImagesCount];
+//                        $product['images'][$productImagesCount]=$temp;
                         foreach ($product['images'] as $image):
                             ?>
                             <div class="hand text-center modal_akhar_padding<?php if ($x++ == 0) echo ' first '; ?>"

@@ -128,15 +128,20 @@
             </div>
         </div>
 
-        <div id="logo">
-            <?php if ($logo) { ?>
-            <!--<a href="<?php echo $home; ?>">-->
-            <img id="logo_img" src="<?php echo $logofix; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>"
-                 class="img-responsive"/>
-            <!--</a>-->
-            <?php } else { ?>
-            <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
-            <?php } ?>
+        <div id="logo" class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-2">
+                <?php if ($logo) { ?>
+                <a href="<?php echo $home; ?>">
+                    <img id="logo_img" src="<?php echo $logofix; ?>" title="<?php echo $name; ?>"
+                         alt="<?php echo $name; ?>"
+                         class="img-responsive"/>
+                </a>
+                <?php } else { ?>
+                <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
+                <?php } ?>
+            </div>
+            <div class="col-md-5"></div>
         </div>
 
 
@@ -186,13 +191,13 @@
                onclick="doheightMenu()" class="myP">درباره ما</a>
 
             <img class="searchImgHeader" width="18px" src="<?php echo $search_icon; ?>">
-            <form class="search" method="post" action="index.html">
-                <input id="search_header" onkeyup="searchAjax()" type="text" name="q" placeholder="جستجو..."/>
+            <div class="search">
+                <input id="search_header" onkeyup="searchAjax()" type="text" placeholder="جستجو..."/>
                 <ul id="searchResult" class="results">
 
 
                 </ul>
-            </form>
+            </div>
 
 
         </div>

@@ -320,6 +320,7 @@ class ControllerProductProduct extends Controller {
             $data['images'] = array();
 
             $results = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
+
             $product_images = $results;
             for ($i = 0; $i < count($product_images); $i++) {
                 $product_images[$i]['image'] = $server . 'image/' . $product_images[$i]['image'];

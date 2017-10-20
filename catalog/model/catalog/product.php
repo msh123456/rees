@@ -143,6 +143,13 @@ class ModelCatalogProduct extends Model {
 			$sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
 		}
 
+        if (!empty($data['minPrice'])) {
+            $sql .= " AND p.price <= '" . (int)$data['minPrice'] . "'";
+        }
+        if (!empty($data['maxPrice'])) {
+            $sql .= " AND p.price >= '" . (int)$data['maxPrice'] . "'";
+        }
+
 		$sql .= " GROUP BY p.product_id";
 
 		$sort_data = array(
@@ -374,9 +381,17 @@ class ModelCatalogProduct extends Model {
 	}
 
 	public function getProductImages($product_id) {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_image WHERE product_id = '" . (int)$product_id . "' ORDER BY sort_order ASC");
 
-		return $query->rows;
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_image WHERE product_id = '" . (int)$product_id . "' ORDER BY sort_order ASC");
+        $result = $query->rows;
+
+	    $product = $this->getProduct($product_id);
+
+        $addToArray['image']=$product['image'];
+        array_unshift($result,$addToArray);
+        return $result ;
+
+
 	}
 
 	public function getProductRelated($product_id) {
@@ -490,9 +505,16 @@ class ModelCatalogProduct extends Model {
 			$sql .= ")";
 		}
 
-		if (!empty($data['filter_manufacturer_id'])) {
-			$sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
-		}
+        if (!empty($data['filter_manufacturer_id'])) {
+            $sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
+        }
+
+        if (!empty($data['minPrice'])) {
+            $sql .= " AND p.price <= '" . (int)$data['minPrice'] . "'";
+        }
+        if (!empty($data['maxPrice'])) {
+            $sql .= " AND p.price >= '" . (int)$data['maxPrice'] . "'";
+        }
 
 		$query = $this->db->query($sql);
 

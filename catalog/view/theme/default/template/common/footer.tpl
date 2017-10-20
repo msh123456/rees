@@ -1,7 +1,7 @@
 <footer>
     <div class="container row">
         <div class="col-sm-2">
-            <img src="<?php echo $namad_icon; ?>">
+            <img class="namad" src="<?php echo $namad_icon; ?>">
         </div>
         <div class="col-sm-2 fontIranSanse ">
             <div class="col-md-12"><a href="<?php echo $server; ?>index.php?route=information/information&information_id=4">درباره ما</a></div>

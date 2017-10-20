@@ -8,6 +8,7 @@ define('HTTPS_SERVER', 'http://localhost/aa/');
 // DIR
 define('DIR_APPLICATION', 'C:/xampp/htdocs/aa/catalog/');
 define('DIR_SYSTEM', 'C:/xampp/htdocs/aa/system/');
+define('DIR_CONTROLLER', 'C:/xampp/htdocs/aa/catalog/controller/');
 define('DIR_LANGUAGE', 'C:/xampp/htdocs/aa/catalog/language/');
 define('DIR_TEMPLATE', 'C:/xampp/htdocs/aa/catalog/view/theme/');
 define('DIR_CONFIG', 'C:/xampp/htdocs/aa/system/config/');

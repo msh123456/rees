@@ -59,6 +59,8 @@ function getUrlParameter(sParam) {
 
 
 function change_price_clicked(){
+    $('#button-filter').click();
+    return;
 	 var originalVal=0;
 
 	var newLocation =  "";
