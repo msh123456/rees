@@ -264,7 +264,7 @@ class ModelCheckoutOrder extends Model {
 
 			$customer_info = $this->model_account_customer->getCustomer($order_info['customer_id']);
 
-			if ($customer_info && $customer_info['safe']) {
+			if ($customer_info && isset($customer_info['safe']) && $customer_info['safe']) {
 				$safe = true;
 			} else {
 				$safe = false;

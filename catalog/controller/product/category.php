@@ -211,7 +211,7 @@ class ControllerProductCategory extends Controller
                 $filter_data['minPrice']=$min;
             }
             if (isset($max)){
-                $filter_data['minPrice']=$max;
+                $filter_data['maxPrice']=$max;
             }
 
             $product_total = $this->model_catalog_product->getTotalProducts($filter_data);

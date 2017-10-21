@@ -960,7 +960,7 @@ class ControllerSaleCustomer extends Controller {
 
 		if (isset($this->request->post['safe'])) {
 			$data['safe'] = $this->request->post['safe'];
-		} elseif (!empty($customer_info)) {
+		} elseif (!empty($customer_info) && isset($customer_info['safe'])) {
 			$data['safe'] = $customer_info['safe'];
 		} else {
 			$data['safe'] = 0;

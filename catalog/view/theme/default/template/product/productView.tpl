@@ -1,7 +1,7 @@
 
     <div class="row">
         <?php if(count($products)<=0){ ?>
-            <div class="text center" style="padding-top: 25px; color: red">متاسفانه محصولی در این دسته بندی یافت نشد.</div>
+            <div class="text center" style="padding-top: 25px; color: red">متاسفانه محصولی یافت نشد.</div>
         <?php }else{ ?>
             <?php foreach ($products as $product) : ?>
                 <div onmouseout="hide('.ctext<?php echo $product['product_id']; ?>');

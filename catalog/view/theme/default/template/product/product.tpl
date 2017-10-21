@@ -394,7 +394,7 @@
             <span class="cspan2">کالاهای مرتبط</span>
         </div>
 
-        <div class="row">
+        <div class="row mortabet">
             <?php foreach ($products as $product) : ?>
 
 

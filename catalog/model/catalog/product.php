@@ -144,10 +144,10 @@ class ModelCatalogProduct extends Model {
 		}
 
         if (!empty($data['minPrice'])) {
-            $sql .= " AND p.price <= '" . (int)$data['minPrice'] . "'";
+            $sql .= " AND p.price >= '" . (int)$data['minPrice'] . "'";
         }
         if (!empty($data['maxPrice'])) {
-            $sql .= " AND p.price >= '" . (int)$data['maxPrice'] . "'";
+            $sql .= " AND p.price <= '" . (int)$data['maxPrice'] . "'";
         }
 
 		$sql .= " GROUP BY p.product_id";
@@ -510,10 +510,10 @@ class ModelCatalogProduct extends Model {
         }
 
         if (!empty($data['minPrice'])) {
-            $sql .= " AND p.price <= '" . (int)$data['minPrice'] . "'";
+            $sql .= " AND p.price >= '" . (int)$data['minPrice'] . "'";
         }
         if (!empty($data['maxPrice'])) {
-            $sql .= " AND p.price >= '" . (int)$data['maxPrice'] . "'";
+            $sql .= " AND p.price <= '" . (int)$data['maxPrice'] . "'";
         }
 
 		$query = $this->db->query($sql);

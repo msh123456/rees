@@ -5725,3 +5725,60 @@
 2017-10-21 3:36:45 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
 2017-10-21 3:41:10 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
 2017-10-21 3:41:56 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Property access is not allowed yet in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Property access is not allowed yet in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Couldn't fetch mysqli in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Couldn't fetch mysqli in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Property access is not allowed yet in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Couldn't fetch mysqli in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Couldn't fetch mysqli in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Couldn't fetch mysqli in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Couldn't fetch mysqli in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Couldn't fetch mysqli in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Couldn't fetch mysqli in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Property access is not allowed yet in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Couldn't fetch mysqli in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Couldn't fetch mysqli in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Couldn't fetch mysqli in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:01:43 - PHP Warning:  DB\MySQLi::__destruct(): Couldn't fetch mysqli in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 59
+2017-10-21 21:08:05 - PHP Notice:  Undefined index: safe in C:\xampp\htdocs\aa\catalog\model\checkout\order.php on line 267
+2017-10-21 21:16:44 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-21 21:32:03 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-21 22:27:37 - PHP Notice:  Error: Could not load model C:/xampp/htdocs/aa/catalog/model/checkout/saman.php! in C:\xampp\htdocs\aa\system\engine\loader.php on line 24
+2017-10-21 22:28:20 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''amount','resnum','user_id') 
+	    VALUES(1020000.0000,445215db1fd67fab29853a6e' at line 1<br />Error No: 1064<br />INSERT INTO dwc_saman ('amount','resnum','user_id') 
+	    VALUES(1020000.0000,445215db1fd67fab29853a6e0fc4ac62,2633) in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 41
+2017-10-21 22:32:13 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''amount','resnum','user_id','order_id') 
+	    VALUES('1020000.0000','aee4afc503' at line 1<br />Error No: 1064<br />INSERT INTO dwc_saman ('amount','resnum','user_id','order_id') 
+	    VALUES('1020000.0000','aee4afc5035ca6161a358aaf819ad213','2633','2176') in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 41
+2017-10-21 22:33:13 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''amount','resnum','user_id','order_id') 
+	    VALUES('1020000.0000','8b89dcee77' at line 1<br />Error No: 1064<br />INSERT INTO dwc_saman ('amount','resnum','user_id','order_id') 
+	    VALUES('1020000.0000','8b89dcee777aeaaddd390cada05f1182','2633','2177') in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 41
+2017-10-21 22:39:56 - PHP Notice:  Undefined index: safe in C:\xampp\htdocs\aa\catalog\model\checkout\order.php on line 267
+2017-10-21 22:45:11 - PHP Notice:  Undefined index: safe in C:\xampp\htdocs\aa\catalog\model\checkout\order.php on line 267
+2017-10-21 23:03:34 - PHP Notice:  Array to string conversion in C:\xampp\htdocs\aa\catalog\controller\payment\bank_transfer.php on line 49
+2017-10-21 23:06:33 - PHP Notice:  Array to string conversion in C:\xampp\htdocs\aa\system\library\response.php on line 72
+2017-10-21 23:30:06 - PHP Notice:  Error: Unknown column 'order_id' in 'field list'<br />Error No: 1054<br />INSERT INTO dwc_saman (amount,resnum,user_id,order_id) 
+	    VALUES('255000','ac28cfdf1fe213e0a29428b5dc48d52b','2633','2191') in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 41
+2017-10-21 23:30:14 - PHP Notice:  Error: Unknown column 'order_id' in 'field list'<br />Error No: 1054<br />INSERT INTO dwc_saman (amount,resnum,user_id,order_id) 
+	    VALUES('255000','7878d06ae86479c146d9ede35eeccbd7','2633','2191') in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 41
+2017-10-21 23:32:26 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(state=Canceled By User ,statecode=-1 ,refnum= ,cid= ,traceno= ,rrn= ,securepan=' at line 1<br />Error No: 1064<br />UPDATE  dwc_saman set(state=Canceled By User ,statecode=-1 ,refnum= ,cid= ,traceno= ,rrn= ,securepan= and resnum=2191 and state=WENT_TO_BANK ) where true   in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 41
+2017-10-21 23:34:00 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(state='Canceled By User' ,statecode='-1' ,refnum='' ,cid='' ,traceno='' ,rrn=''' at line 1<br />Error No: 1064<br />UPDATE  dwc_saman set(state='Canceled By User' ,statecode='-1' ,refnum='' ,cid='' ,traceno='' ,rrn='' ,securepan='' ) where true and resnum='2191' and state='WENT_TO_BANK'   in C:\xampp\htdocs\aa\system\library\db\mysqli.php on line 41
+2017-10-22 0:29:48 - PHP Notice:  Undefined index: order_id in C:\xampp\htdocs\aa\catalog\controller\payment\bank_transfer.php on line 82
+2017-10-22 0:30:36 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-22 0:42:37 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-22 1:41:19 - PHP Notice:  Undefined index: safe in C:\xampp\htdocs\aa\admin\controller\sale\customer.php on line 964
+2017-10-22 2:23:50 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-22 2:28:13 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-22 2:28:47 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-22 2:29:12 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-22 2:31:28 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-22 2:39:47 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-22 2:40:13 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-22 2:42:15 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-22 2:53:54 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-22 2:54:14 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-22 3:00:03 - PHP Notice:  Undefined variable: max in C:\xampp\htdocs\aa\catalog\view\theme\default\template\module\filter.tpl on line 4
+2017-10-22 3:00:03 - PHP Notice:  Undefined variable: current_min in C:\xampp\htdocs\aa\catalog\view\theme\default\template\module\filter.tpl on line 4
+2017-10-22 3:00:03 - PHP Notice:  Undefined variable: current_max in C:\xampp\htdocs\aa\catalog\view\theme\default\template\module\filter.tpl on line 4
+2017-10-22 3:00:03 - PHP Notice:  Undefined variable: max in C:\xampp\htdocs\aa\catalog\view\theme\default\template\module\filter.tpl on line 5

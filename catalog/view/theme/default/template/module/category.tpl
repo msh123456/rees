@@ -1,12 +1,12 @@
 <div class="container">
-    <div  class="row ">
+    <div class="row ">
         <div class="col-md-12 collection_list" style="border-bottom: 1px solid #555">
-            <a href="" >مجموعه ها</a>
+            <a href="">مجموعه ها</a>
         </div>
         <?php foreach ($mycategories as $category) { ?>
-        <div class="col-md-12 collection_each ">
-            <a href="<?php echo $category['href']; ?>" ><?php echo $category['name']; ?></a>
-        </div>
+            <div class="col-md-12 collection_each ">
+                <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
+            </div>
         <?php }
         ?>
     </div>
@@ -14,13 +14,15 @@
 
 
 
- 
-<div class="price_header_top"><p class="text-center ">قیمت</p></div>
-<input id="ex2" type="text" class="span2" value="" data-slider-min="0" data-slider-max="<?php echo $max/1000; ?>" data-slider-step="10" data-slider-value="[<?php echo $current_min/1000; ?>,<?php echo $current_max/1000; ?>]"/>
-<div><b style="float: left"><?php echo $max/1000; ?></b>       <b style="float: right">0</b></div>
-  
+
+<div class="price_header_top"><p class="text-center ">قیمت (هزار تومان)</p></div>
+<input id="ex2" type="text" class="span2" value="" data-slider-min="0" data-slider-max="<?php echo $max / 1000; ?>"
+       data-slider-step="10"
+       data-slider-value="[<?php echo $current_min / 1000; ?>,<?php echo $current_max / 1000; ?>]"/>
+<div><b style="float: left"><?php echo $max / 1000; ?></b> <b style="float: right">0</b></div>
+
 <script>
-  $("#ex2").slider({});
+    $("#ex2").slider({});
 </script>
 
 
