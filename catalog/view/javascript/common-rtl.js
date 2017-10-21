@@ -123,9 +123,9 @@ function change_menu_picture(){
 
 function checkscrol() {
     var scroll = $(this).scrollTop();
-    if (scroll > 63) {
+    if (scroll > 41) {
         $("#fixed").addClass("navbar-fixed-top"); //("hidden");
-        $("#mycontainer").css("margin-top", "154px");
+        $("#mycontainer").css("margin-top", "128px");
         $("#logo_img").attr("width","100px");
         //$("#notfixed").slideUp(0)//("hidden");
     } else {

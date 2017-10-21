@@ -16,8 +16,8 @@
 
  
 <div class="price_header_top"><p class="text-center ">قیمت</p></div>
-<input onchange="change_price_clicked();" id="ex2" type="text" class="span2" value="" data-slider-min="0" data-slider-max="<?php echo $max; ?>" data-slider-step="10" data-slider-value="[<?php echo $current_min; ?>,<?php echo $current_max; ?>]"/>
-<div><b style="float: left"><?php echo $max; ?></b>       <b style="float: right">0</b></div>
+<input id="ex2" type="text" class="span2" value="" data-slider-min="0" data-slider-max="<?php echo $max/1000; ?>" data-slider-step="10" data-slider-value="[<?php echo $current_min/1000; ?>,<?php echo $current_max/1000; ?>]"/>
+<div><b style="float: left"><?php echo $max/1000; ?></b>       <b style="float: right">0</b></div>
   
 <script>
   $("#ex2").slider({});

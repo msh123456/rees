@@ -41,7 +41,7 @@
 
         $("#productss").html("<img class=\"gif\" src=\"<?php echo $loadingGifSrc; ?>\" />");
         var newVal = $('.span2').data('slider').getValue();
-        $.get("<?php echo $action; ?>&ajax=1&filter=" + filterValue + "&minPrice=" + newVal[0] + "&maxPrice=" + newVal[1], function (html) {
+        $.get("<?php echo $action; ?>&ajax=1&filter=" + filterValue + "&minPrice=" + newVal[0]*1000 + "&maxPrice=" + newVal[1]*1000, function (html) {
 
             $("#productss").html(html);
 

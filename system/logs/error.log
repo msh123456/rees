@@ -5722,3 +5722,6 @@
 2017-10-21 3:08:23 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
 2017-10-21 3:09:40 - PHP Notice:  Undefined index: safe in C:\xampp\htdocs\aa\catalog\model\checkout\order.php on line 267
 2017-10-21 3:14:24 - PHP Notice:  Undefined index: safe in C:\xampp\htdocs\aa\catalog\model\checkout\order.php on line 267
+2017-10-21 3:36:45 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-21 3:41:10 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
+2017-10-21 3:41:56 - PHP Notice:  Undefined variable: class in C:\xampp\htdocs\aa\catalog\view\theme\default\template\product\product.tpl on line 266
