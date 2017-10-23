@@ -1,43 +1,62 @@
-function submitMe(){
-	var search = $('#search').val();
-	alert(search);
-	window.location.href="index.php?route=product/search&search="+search;
-}
-$('.featurePadding2').hover(function()
-{
-     // Mouse Over Callback
-	 show('#text');
-}, function()
-{ 
-     // Mouse Leave callback
-	 hide('#text');
+$(document).ready(function () {
+
+    $("#search_header").focusin(function () {
+        //$(this).animate({ width: '120' }, 'slow');
+    });
+    $("#search_header").focusout(function () {
+        //$(this).animate({ width: '90' }, 'slow');
+    });
+    $(".first").each(function (index) {
+        $(this).click();
+    });
+
+
+
+
+
 });
 
 
-function show(id){
-	$(id).fadeIn(0);
+
+
+function submitMe() {
+    var search = $('#search').val();
+    alert(search);
+    window.location.href = "index.php?route=product/search&search=" + search;
 }
-function hide(id){
-	$(id).fadeOut(0);
+$('.featurePadding2').hover(function () {
+    // Mouse Over Callback
+    show('#text');
+}, function () {
+    // Mouse Leave callback
+    hide('#text');
+});
+
+
+function show(id) {
+    $(id).fadeIn(0);
 }
-function dragIt(id){
-	if($(id).css("left")<'0px'){
-		$('div[class*="myclass"]').animate({left: '-150px'},0);
-		$('div[class*="myclass"]').css('z-index','200');
-		$(id).css('z-index', '250');
-		$(id).animate({left: '0px'},500);
-		
-	}else{
-		$(id).animate({left: '-150px'},500);
-		$(id).css('z-index', '200');
-	}
-	
-	
+function hide(id) {
+    $(id).fadeOut(0);
+}
+function dragIt(id) {
+    if ($(id).css("left") < '0px') {
+        $('div[class*="myclass"]').animate({left: '-150px'}, 0);
+        $('div[class*="myclass"]').css('z-index', '200');
+        $(id).css('z-index', '250');
+        $(id).animate({left: '0px'}, 500);
+
+    } else {
+        $(id).animate({left: '-150px'}, 500);
+        $(id).css('z-index', '200');
+    }
+
+
 }
 
-function set_modal_picture_src(Src){
-	
-	
+function set_modal_picture_src(Src) {
+
+
 }
 
 function getUrlParameter(sParam) {
@@ -56,99 +75,68 @@ function getUrlParameter(sParam) {
 };
 
 
-
-
-function change_price_clicked(){
+function change_price_clicked() {
     $('#button-filter').click();
     return;
-	 var originalVal=0;
+    var originalVal = 0;
 
-	var newLocation =  "";
+    var newLocation = "";
     var newVal = $('.span2').data('slider').getValue();
 
-		
-	if(getUrlParameter("min")===undefined){
-		location.href=window.location.href+"&min="+newVal[0]+"&max="+newVal[1];
-		return;
-	}
-	var splited = window.location.href.split('&');
-	newLocation+=splited[0];
-	for(var i=1;i<splited.length;i++){
-		var value = splited[i].split("=")[1];
-		var key = splited[i].split("=")[0];
-		if(key=="min")
-			value=newVal[0];
-		else if(key=="max")
-			value=newVal[1];
-		
-		newLocation+="&"+key+"="+value;
-			
 
-	
-	location.href=newLocation;
-        
+    if (getUrlParameter("min") === undefined) {
+        location.href = window.location.href + "&min=" + newVal[0] + "&max=" + newVal[1];
+        return;
+    }
+    var splited = window.location.href.split('&');
+    newLocation += splited[0];
+    for (var i = 1; i < splited.length; i++) {
+        var value = splited[i].split("=")[1];
+        var key = splited[i].split("=")[0];
+        if (key == "min")
+            value = newVal[0];
+        else if (key == "max")
+            value = newVal[1];
+
+        newLocation += "&" + key + "=" + value;
+
+
+        location.href = newLocation;
+
     }
 }
 
-$(document).ready(function(){
-
-$("#search_header").focusin(function() {
-	//$(this).animate({ width: '120' }, 'slow');
-});
-$("#search_header").focusout(function() {
-	//$(this).animate({ width: '90' }, 'slow');
-});
-$( ".first" ).each(function( index ) {
-	      $( this ).click();
-	});
 
 
-    var setedHeight=270;
-    var setHeight = '#menuDiv';
-    $(".dummy").on("show.bs.dropdown", function(event){
-        $(setHeight).height(setedHeight);
-    });
-    
-    
-    $(".dummy").on("hide.bs.dropdown", function(event){
-         $('#menuDiv').height(40);
-    });
-    
-    
-});
+function change_menu_picture() {
 
-function change_menu_picture(){
-   
 }
 
 function checkscrol() {
     var scroll = $(this).scrollTop();
-    if (scroll > 41) {
+    if (scroll > 39) {
         $("#fixed").addClass("navbar-fixed-top"); //("hidden");
         $("#mycontainer").css("margin-top", "128px");
-        $("#logo_img").attr("width","100px");
+        $("#logo_img").attr("width", "100px");
         //$("#notfixed").slideUp(0)//("hidden");
     } else {
 
         $("#fixed").removeClass("navbar-fixed-top"); //("hidden");
         $("#mycontainer").css("margin-top", "0px");
-        $("#logo_img").attr("width","250px");
+        $("#logo_img").attr("width", "250px");
         // $("#notfixed").slideDown(0);//("hidden");
     }
 }
-$(window).load(function() {
+$(window).load(function () {
     checkscrol();
-		
+
 });
-$(window).scroll(function(event) {
+$(window).scroll(function (event) {
     checkscrol();
 });
 
 
-
-
-
-$(window).resize(function() {
+$(window).resize(function () {
     if ($(window).width() < 1050)
         $("[id*='myimage']").css('display', 'none');
     else
@@ -182,7 +170,7 @@ function changeMenuImage(id, src) {
     //alert();
     $("#" + id).attr("src", src);
 }
-$(document).ready(function() {
+$(document).ready(function () {
 
 
 
@@ -198,7 +186,7 @@ $(document).ready(function() {
     }
 
     // Highlight any found errors
-    $('.text-danger').each(function() {
+    $('.text-danger').each(function () {
         var element = $(this).parent().parent();
 
         if (element.hasClass('form-group')) {
@@ -207,7 +195,7 @@ $(document).ready(function() {
     });
 
     // Currency
-    $('#currency .currency-select').on('click', function(e) {
+    $('#currency .currency-select').on('click', function (e) {
         e.preventDefault();
 
         $('#currency input[name=\'code\']').attr('value', $(this).attr('name'));
@@ -216,7 +204,7 @@ $(document).ready(function() {
     });
 
     // Language
-    $('#language a').on('click', function(e) {
+    $('#language a').on('click', function (e) {
         e.preventDefault();
 
         $('#language input[name=\'code\']').attr('value', $(this).attr('href'));
@@ -225,7 +213,7 @@ $(document).ready(function() {
     });
 
     /* Search */
-    $('#search input[name=\'search\']').parent().find('button').on('click', function() {
+    $('#search input[name=\'search\']').parent().find('button').on('click', function () {
         url = $('base').attr('href') + 'index.php?route=product/search';
 
         var value = $('header input[name=\'search\']').val();
@@ -237,14 +225,14 @@ $(document).ready(function() {
         location = url;
     });
 
-    $('#search input[name=\'search\']').on('keydown', function(e) {
+    $('#search input[name=\'search\']').on('keydown', function (e) {
         if (e.keyCode == 13) {
             $('header input[name=\'search\']').parent().find('button').trigger('click');
         }
     });
 
     // Menu
-    $('#menu .dropdown-menu').each(function() {
+    $('#menu .dropdown-menu').each(function () {
         var menu = $('#menu').offset();
         var dropdown = $(this).parent().offset();
         var dropdown_rtl = ($(window).width() - (dropdown.left + $(this).parent().outerWidth()));
@@ -257,7 +245,7 @@ $(document).ready(function() {
     });
 
     // Product List
-    $('#list-view').click(function() {
+    $('#list-view').click(function () {
         $('#content .product-layout > .clearfix').remove();
 
         //$('#content .product-layout').attr('class', 'product-layout product-list col-xs-12');
@@ -267,7 +255,7 @@ $(document).ready(function() {
     });
 
     // Product Grid
-    $('#grid-view').click(function() {
+    $('#grid-view').click(function () {
         $('#content .product-layout > .clearfix').remove();
 
         // What a shame bootstrap does not take into account dynamically loaded columns
@@ -294,26 +282,26 @@ $(document).ready(function() {
     $('[data-toggle=\'tooltip\']').tooltip({container: 'body'});
 
     // Makes tooltips work on ajax generated content
-    $(document).ajaxStop(function() {
+    $(document).ajaxStop(function () {
         $('[data-toggle=\'tooltip\']').tooltip({container: 'body'});
     });
 });
 
 // Cart add remove functions
 var cart = {
-    'add': function(product_id, quantity) {
+    'add': function (product_id, quantity) {
         $.ajax({
             url: 'index.php?route=checkout/cart/add',
             type: 'post',
             data: 'product_id=' + product_id + '&quantity=' + (typeof (quantity) != 'undefined' ? quantity : 1),
             dataType: 'json',
-            beforeSend: function() {
+            beforeSend: function () {
                 $('#cart > button').button('loading');
             },
-            complete: function() {
+            complete: function () {
                 $('#cart > button').button('reset');
             },
-            success: function(json) {
+            success: function (json) {
                 $('.alert, .text-danger').remove();
 
                 if (json['redirect']) {
@@ -323,13 +311,13 @@ var cart = {
                 if (json['success']) {
                     $('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
                     var x = $("#mycart").text();
-					
+
                     x = parseInt(x);
                     x++;
                     $("#mycart").text(x);
-					alert('کالا با موفقیت به سبد خرید شما افزوده شد.');
+                    alert('کالا با موفقیت به سبد خرید شما افزوده شد.');
                     // Need to set timeout otherwise it wont update the total
-                    setTimeout(function() {
+                    setTimeout(function () {
                         $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
                     }, 100);
 
@@ -340,21 +328,21 @@ var cart = {
             }
         });
     },
-    'update': function(key, quantity) {
+    'update': function (key, quantity) {
         $.ajax({
             url: 'index.php?route=checkout/cart/edit',
             type: 'post',
             data: 'key=' + key + '&quantity=' + (typeof (quantity) != 'undefined' ? quantity : 1),
             dataType: 'json',
-            beforeSend: function() {
+            beforeSend: function () {
                 $('#cart > button').button('loading');
             },
-            complete: function() {
+            complete: function () {
                 $('#cart > button').button('reset');
             },
-            success: function(json) {
+            success: function (json) {
                 // Need to set timeout otherwise it wont update the total
-                setTimeout(function() {
+                setTimeout(function () {
                     $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
                 }, 100);
 
@@ -366,21 +354,21 @@ var cart = {
             }
         });
     },
-    'remove': function(key) {
+    'remove': function (key) {
         $.ajax({
             url: 'index.php?route=checkout/cart/remove',
             type: 'post',
             data: 'key=' + key,
             dataType: 'json',
-            beforeSend: function() {
+            beforeSend: function () {
                 $('#cart > button').button('loading');
             },
-            complete: function() {
+            complete: function () {
                 $('#cart > button').button('reset');
             },
-            success: function(json) {
+            success: function (json) {
                 // Need to set timeout otherwise it wont update the total
-                setTimeout(function() {
+                setTimeout(function () {
                     $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
                 }, 100);
 
@@ -395,24 +383,24 @@ var cart = {
 }
 
 var voucher = {
-    'add': function() {
+    'add': function () {
 
     },
-    'remove': function(key) {
+    'remove': function (key) {
         $.ajax({
             url: 'index.php?route=checkout/cart/remove',
             type: 'post',
             data: 'key=' + key,
             dataType: 'json',
-            beforeSend: function() {
+            beforeSend: function () {
                 $('#cart > button').button('loading');
             },
-            complete: function() {
+            complete: function () {
                 $('#cart > button').button('reset');
             },
-            success: function(json) {
+            success: function (json) {
                 // Need to set timeout otherwise it wont update the total
-                setTimeout(function() {
+                setTimeout(function () {
                     $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
                 }, 100);
 
@@ -427,13 +415,13 @@ var voucher = {
 }
 
 var wishlist = {
-    'add': function(product_id) {
+    'add': function (product_id) {
         $.ajax({
             url: 'index.php?route=account/wishlist/add',
             type: 'post',
             data: 'product_id=' + product_id,
             dataType: 'json',
-            success: function(json) {
+            success: function (json) {
                 $('.alert').remove();
 
                 if (json['success']) {
@@ -446,24 +434,24 @@ var wishlist = {
 
                 $('#wishlist-total span').html(json['total']);
                 $('#wishlist-total').attr('title', json['total']);
-				alert("کالا با موفقیت به سبد خرید شما اضافه شد.");
+                alert("کالا با موفقیت به سبد خرید شما اضافه شد.");
                 $('html, body').animate({scrollTop: 0}, 'slow');
             }
         });
     },
-    'remove': function() {
+    'remove': function () {
 
     }
 }
 
 var compare = {
-    'add': function(product_id) {
+    'add': function (product_id) {
         $.ajax({
             url: 'index.php?route=product/compare/add',
             type: 'post',
             data: 'product_id=' + product_id,
             dataType: 'json',
-            success: function(json) {
+            success: function (json) {
                 $('.alert').remove();
 
                 if (json['success']) {
@@ -476,13 +464,13 @@ var compare = {
             }
         });
     },
-    'remove': function() {
+    'remove': function () {
 
     }
 }
 
 /* Agree to Terms */
-$(document).delegate('.agree', 'click', function(e) {
+$(document).delegate('.agree', 'click', function (e) {
     e.preventDefault();
 
     $('#modal-agree').remove();
@@ -493,7 +481,7 @@ $(document).delegate('.agree', 'click', function(e) {
         url: $(element).attr('href'),
         type: 'get',
         dataType: 'html',
-        success: function(data) {
+        success: function (data) {
             html = '<div id="modal-agree" class="modal">';
             html += '  <div class="modal-dialog">';
             html += '    <div class="modal-content">';
@@ -514,9 +502,9 @@ $(document).delegate('.agree', 'click', function(e) {
 });
 
 // Autocomplete */
-(function($) {
-    $.fn.autocomplete = function(option) {
-        return this.each(function() {
+(function ($) {
+    $.fn.autocomplete = function (option) {
+        return this.each(function () {
             this.timer = null;
             this.items = new Array();
 
@@ -525,19 +513,19 @@ $(document).delegate('.agree', 'click', function(e) {
             $(this).attr('autocomplete', 'off');
 
             // Focus
-            $(this).on('focus', function() {
+            $(this).on('focus', function () {
                 this.request();
             });
 
             // Blur
-            $(this).on('blur', function() {
-                setTimeout(function(object) {
+            $(this).on('blur', function () {
+                setTimeout(function (object) {
                     object.hide();
                 }, 200, this);
             });
 
             // Keydown
-            $(this).on('keydown', function(event) {
+            $(this).on('keydown', function (event) {
                 switch (event.keyCode) {
                     case 27: // escape
                         this.hide();
@@ -549,7 +537,7 @@ $(document).delegate('.agree', 'click', function(e) {
             });
 
             // Click
-            this.click = function(event) {
+            this.click = function (event) {
                 event.preventDefault();
 
                 value = $(event.target).parent().attr('data-value');
@@ -560,7 +548,7 @@ $(document).delegate('.agree', 'click', function(e) {
             }
 
             // Show
-            this.show = function() {
+            this.show = function () {
                 var pos = $(this).position();
 
                 $(this).siblings('ul.dropdown-menu').css({
@@ -572,21 +560,21 @@ $(document).delegate('.agree', 'click', function(e) {
             }
 
             // Hide
-            this.hide = function() {
+            this.hide = function () {
                 $(this).siblings('ul.dropdown-menu').hide();
             }
 
             // Request
-            this.request = function() {
+            this.request = function () {
                 clearTimeout(this.timer);
 
-                this.timer = setTimeout(function(object) {
+                this.timer = setTimeout(function (object) {
                     object.source($(object).val(), $.proxy(object.response, object));
                 }, 200, this);
             }
 
             // Response
-            this.response = function(json) {
+            this.response = function (json) {
                 html = '';
 
                 if (json.length) {

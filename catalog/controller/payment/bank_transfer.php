@@ -82,23 +82,23 @@ class ControllerPaymentBankTransfer extends Controller
             $order_info = $this->model_checkout_order->getOrder($this->session->data['order_id']);
 
             if ($affectedRows > 0 && $amount>0 && $amount == (int)$order_info['total']) {
-                $comment="کاربر سفارش را ثبت کرد و به درگاه بانک سامان رفت و پرداخت او با موفقیت انجام شد. اطلاعات پرداخت او بدین شرح است :";
-                $comment.="State=".$_POST['State']."_____";
-                $comment.="StateCode=".$_POST['StateCode']."_____";
-                $comment.="ResNum=".$_POST['ResNum']."_____";
-                $comment.="RefNum=".$_POST['RefNum']."_____";
-                $comment.="CID=".$_POST['CID']."_____";
-                $comment.="RRN=".$_POST['RRN']."_____";
-                $comment.="SecurePan=".$_POST['SecurePan']."_____";
-                $comment.="Order_id=".$order_info['order_id']."_____";
+                $comment="پرداخت با موفقیت انجام شد. مشخصات پرداخت:"."&#13;&#10;";
+                $comment.="State=".$_POST['State']."&#13;&#10;";
+                $comment.="StateCode=".$_POST['StateCode']."&#13;&#10;";
+                $comment.="ResNum=".$_POST['ResNum']."&#13;&#10;";
+                $comment.="RefNum=".$_POST['RefNum']."&#13;&#10;";
+                $comment.="CID=".$_POST['CID']."&#13;&#10;";
+                $comment.="RRN=".$_POST['RRN']."&#13;&#10;";
+                $comment.="SecurePan=".$_POST['SecurePan']."&#13;&#10;";
+                $comment.="Order_id=".$order_info['order_id']."&#13;&#10;";
                 $this->model_checkout_order->addOrderHistory($this->session->data['order_id'],2, $comment, true);
                 $this->response->redirect($this->url->link('checkout/success', '', 'SSL'));
             } else {
-                $comment="کاربر سفارش را ثبت کرد و به درگاه بانک سامان رفت و پرداخت او با شکست مواجه شد. اطلاعات پرداخت او بدین شرح است :";
-                $comment.="State=".$_POST['State']."_____";
-                $comment.="StateCode=".$_POST['StateCode']."_____";
-                $comment.="ResNum=".$_POST['ResNum']."_____";
-                $comment.="Order_id=".$order_info['order_id']."_____";
+                $comment="پرداخت با شکست مواجه شد. مشخصات پرداخت:"."&#13;&#10;";
+                $comment.="State=".$_POST['State']."&#13;&#10;";
+                $comment.="StateCode=".$_POST['StateCode']."&#13;&#10;";
+                $comment.="ResNum=".$_POST['ResNum']."&#13;&#10;";
+                $comment.="Order_id=".$order_info['order_id']."&#13;&#10;";
                 $this->model_checkout_order->addOrderHistory($this->session->data['order_id'], 17 , $comment, true);
                 $this->response->redirect($this->url->link('checkout/failure', '', 'SSL'));
             }

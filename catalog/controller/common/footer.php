@@ -6,7 +6,7 @@ class ControllerCommonFooter extends Controller {
 
         
 
-        $this->document->setTitle($this->language->get('heading_title'));
+        //$this->document->setTitle($this->language->get('heading_title'));
         $this->load->language('account/newsletter');
         if ($this->request->server['REQUEST_METHOD'] == 'POST' && isset($_POST['customerEmail'])) {
             $this->load->model('account/customer');

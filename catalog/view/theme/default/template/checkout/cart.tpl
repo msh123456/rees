@@ -31,7 +31,7 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h1><?php echo $heading_title; ?>
-        <?php if ($weight) { ?>
+        <?php if ($weight && false) { ?>
         &nbsp;(<?php echo $weight; ?>)
         <?php } ?>
       </h1>
@@ -117,7 +117,7 @@
         </div>
       </div>
       <div class="buttons">
-        <div class="pull-left"><a href="<?php echo $continue; ?>" class="btn btn-default"><?php echo $button_shopping; ?></a></div>
+        <!--<div class="pull-left"><a href="<?php echo $continue; ?>" class="btn btn-default"><?php echo $button_shopping; ?></a></div>-->
         <div class="pull-right"><a href="<?php echo $checkout; ?>" class="btn btn-primary"><?php echo $button_checkout; ?></a></div>
       </div>
       <?php echo $content_bottom; ?></div>

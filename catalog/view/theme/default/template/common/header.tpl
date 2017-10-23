@@ -10,7 +10,11 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo $title; ?></title>
+    <?php if($title!="heading_title"){ ?>
+        <title><?php echo $title; ?></title>
+
+    <?php } ?>
+
     <base href="<?php echo $base; ?>"/>
     <?php if ($description) { ?>
     <meta name="description" content="<?php echo $description; ?>"/>
@@ -205,6 +209,16 @@
 
 
     <script>
+        var setedHeight = 270;
+        var setHeight = '#menuDiv';
+        $(".dummy").on("show.bs.dropdown", function (event) {
+            $(setHeight).height(270);
+        });
+
+
+        $(".dummy").on("hide.bs.dropdown", function (event) {
+            $('#menuDiv').height(40);
+        });
         function searchAjax() {
             var searchText = $("#search_header").val();
 
