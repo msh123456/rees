@@ -1,26 +1,36 @@
-
-
 <?php echo $header; ?>
 
 
-<img id="mycontainer" class="img-responsive widthfull" src="<?php echo $banner_img1; ?>">
-<hr>
-<img class="img-responsive widthfull" src="<?php echo $banner_img2; ?>">
-<div class="container">
-    <div class="row">
+    <img id="mycontainer" class="img-responsive widthfull" src="<?= $server . 'image/' . $banner1['image']; ?>">
+<?php if (count($banner2) > 0): ?>
+    <hr>
+<?php endif; ?>
 
-<?php echo $column_left; ?>
-        <?php if ($column_left && $column_right) { ?>
-            <?php $class = 'col-sm-6'; ?>
-        <?php } elseif ($column_left || $column_right) { ?>
-            <?php $class = 'col-sm-9'; ?>
-        <?php } else { ?>
-            <?php $class = 'col-sm-12'; ?>
-        <?php } ?>
-        <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?><?php echo $content_bottom; ?></div>
-        <?php echo $column_right; ?>
+    <div class="row">
+        <?php foreach ($banner2 as $banner): ?>
+            <div class=" <?= $class; ?>">
+                <a href="<?= $banner['link'] ?>"><img class="bannerHome"
+                                                      src="<?= $server . 'image' . $banner['image'] ?>"></a>
+            </div>
+        <?php endforeach; ?>
     </div>
-</div>
+
+    <div class="container">
+        <div class="row">
+
+            <?php echo $column_left; ?>
+            <?php if ($column_left && $column_right) { ?>
+                <?php $class = 'col-sm-6'; ?>
+            <?php } elseif ($column_left || $column_right) { ?>
+                <?php $class = 'col-sm-9'; ?>
+            <?php } else { ?>
+                <?php $class = 'col-sm-12'; ?>
+            <?php } ?>
+            <div id="content"
+                 class="<?php echo $class; ?>"><?php echo $content_top; ?><?php echo $content_bottom; ?></div>
+            <?php echo $column_right; ?>
+        </div>
+    </div>
 <?php echo $footer; ?>
 
 <?php
@@ -36,9 +46,11 @@ if (!isset($_SESSION['taze_vared'])):
 
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <form action="#" style="position: fixed; margin-top: 246px; margin-right: 77px" method="POST">
-                      
-                        <input type="submit" name="submit" value="اشتراک" style="padding: 5px 15px 5px 15px; border: none; background-color: #eee;">
-                        <input type="email" name="firstEmail" placeholder="Email:" dir="ltr" style="border: 0; border-bottom: 1px solid #eee; padding-top: 5px; padding-bottom: 5px">
+
+                        <input type="submit" name="submit" value="اشتراک"
+                               style="padding: 5px 15px 5px 15px; border: none; background-color: #eee;">
+                        <input type="email" name="firstEmail" placeholder="Email:" dir="ltr"
+                               style="border: 0; border-bottom: 1px solid #eee; padding-top: 5px; padding-bottom: 5px">
                     </form>
                     <img src="<?php echo $firstModalImgSrc; ?>" width="100%">
 
@@ -49,7 +61,9 @@ if (!isset($_SESSION['taze_vared'])):
 
         </div>
     </div>
-    <button id="taze_vared_modal" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="display: none;">Open Modal</button>
+    <button id="taze_vared_modal" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"
+            style="display: none;">Open Modal
+    </button>
     <script>
         $("#taze_vared_modal").click();
     </script>

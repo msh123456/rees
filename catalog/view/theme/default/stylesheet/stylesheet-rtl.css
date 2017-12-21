@@ -1618,9 +1618,6 @@ label[disabled="disabled"] {
 }
 
 
-
-
-
 .search .results a:hover {
     background-color: #E5E5E5;
 }
@@ -1638,9 +1635,18 @@ label[disabled="disabled"] {
 .lt-ie9 .search input {
     line-height: 26px
 }
+/***************************************/
+#search_header{
+    border: #FFFFFF 1px solid;
+}
 
 
 
-/***********************************
+
+
+
+
+
+
 
 
