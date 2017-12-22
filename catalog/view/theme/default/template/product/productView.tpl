@@ -11,7 +11,7 @@
                      onmouseover="show('.ctext<?php echo $product['product_id']; ?>');
                          show('#s<?php echo $product['product_id']; ?>');
                          hide('#sm<?php echo $product['product_id']; ?>');"
-                     class="col-md-4 featurePadding2" >
+                     class="col-md-4 col-xs-12 col-sm-6 col-lg-4 featurePadding2" >
 
                     <div class="text-center" >
                         <a  href="<?php echo $product['href']; ?>">

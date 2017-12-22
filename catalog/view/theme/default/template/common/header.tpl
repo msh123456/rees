@@ -135,8 +135,8 @@
         </div>
 
         <div id="logo" class="row">
-            <div class="col-xs-5"></div>
-            <div class="col-xs-2">
+            <div class="col-xs-12 col-sm-2 col-md-3"></div>
+            <div class="col-xs-12 col-sm-8 col-md-6">
                 <?php if ($logo) { ?>
                     <a href="<?php echo $home; ?>">
                         <img id="logo_img" src="<?php echo $logofix; ?>" title="<?php echo $name; ?>"
@@ -147,7 +147,7 @@
                     <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
                 <?php } ?>
             </div>
-            <div class="col-xs-5"></div>
+            <div class="col-xs-12 col-sm-2 col-md-3"></div>
         </div>
 
 

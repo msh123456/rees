@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row ">
-        <div class="col-md-12 collection_list" style="border-bottom: 1px solid #555">
+        <div class="col-md-12 col-xs-12 collection_list" style="border-bottom: 1px solid #555">
             <a href="">مجموعه ها</a>
         </div>
         <?php foreach ($mycategories as $category) { ?>
-            <div class="col-md-12 collection_each ">
+            <div class="col-xs-12 collection_each ">
                 <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
             </div>
         <?php }
