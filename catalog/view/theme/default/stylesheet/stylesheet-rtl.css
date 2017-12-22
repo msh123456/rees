@@ -1636,8 +1636,9 @@ label[disabled="disabled"] {
     line-height: 26px
 }
 /***************************************/
-#search_header{
-    border: #FFFFFF 1px solid;
+.list-group-item {
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 

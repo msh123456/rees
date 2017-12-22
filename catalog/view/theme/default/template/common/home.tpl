@@ -33,7 +33,8 @@
     </div>
 <?php echo $footer; ?>
 
-<?php
+<?php /*
+ //The first modal when user first enters
 if (!isset($_SESSION['taze_vared'])):
     $_SESSION['taze_vared'] = 1;
     ?>
@@ -67,4 +68,4 @@ if (!isset($_SESSION['taze_vared'])):
     <script>
         $("#taze_vared_modal").click();
     </script>
-<?php endif; ?>
+<?php endif;*/ ?>

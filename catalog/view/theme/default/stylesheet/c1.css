@@ -310,3 +310,136 @@
 img{
     max-width: 100% !important;
 }
+.icon-bar{
+  color: black;
+}
+.mynavbar{
+  background: none;
+  border:none;
+    margin-bottom: 0px;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+    background-color: transparent !important;
+}
+#myNavbar {
+    border: none;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+  background-color: #fbfbfb;
+}
+.menu-collection-row {
+  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+
+}
+.menu-collection-row:hover{
+  background-color: #fbfbfb;
+
+}
+#header_img{
+  max-width: 100%;
+}
+
+.header-drop{
+  top: 81%;
+  right: 11px;
+}
+span.input-group-addon {
+    padding: 0;
+}
+span.glyphicon.glyphicon-search {
+    font-size: 20px;
+    top: 6px;
+    -webkit-text-stroke: 1px white;
+}
+
+
+@media (min-width: 768px){
+    .navbar-nav{
+        float:none;
+        margin: 0 auto;
+        display: table;
+        table-layout: fixed;
+    }
+}
+.dropdownLiA{
+    padding: 3px 10px !important;
+    line-height: unset !important;
+}
+
+
+.header-dropdown-menu {
+    right: 15%;
+    top: 90%;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 218px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+.stylish-input-group>.form-control{
+  border:none;
+  border-bottom: 1px solid;
+    border-radius: 0;
+}
+.input-group-addon{
+  border:none;
+}
+
+
+.stylish-input-group .input-group-addon{
+  background: white !important;
+}
+.stylish-input-group .form-control{
+  border-right:0;
+  box-shadow:0 0 0;
+  border-color:#ccc;
+}
+.stylish-input-group button{
+  border:0;
+  background:transparent;
+}
+.header-navbar-nav{
+    margin:0 auto;
+}
+
+
+
+.dropdown-menu{
+    top: 93%;
+    right: 12%;
+}
+
+.header-dropdown-menu{
+    top: 93% !important;
+    right: 15% !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

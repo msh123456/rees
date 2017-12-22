@@ -43,7 +43,7 @@
                             <div class="text-center p2_margin_pro_details"><?php echo $product['price']; ?></div>
 
 
-                            <div class="text-center p2_margin_pro_details" id="s<?php echo $product['product_id']; ?>" >
+                            <div class="text-center p2_margin_pro_details" style="display:none" id="s<?php echo $product['product_id']; ?>" >
 
 
                                 <?php

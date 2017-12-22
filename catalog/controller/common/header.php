@@ -11,10 +11,10 @@ class ControllerCommonHeader extends Controller
         $products = $this->model_catalog_product->getProducts($filter);
         $html = "";
         if (count($products) == 0)
-            $html .= '<li><a style="color: red">موردی یافت نشد</a></li>';
+            $html .= '<li><a class="dropdownLiA" style="color: red">موردی یافت نشد</a></li>';
         else
             foreach ($products as $product) {
-                $html .= '<li><a href="'
+                $html .= '<li><a class="dropdownLiA" href="'
                     . $_SERVER["SCRIPT_NAME"]
                     . '/?route=product/product&product_id='
                     . $product["product_id"]
