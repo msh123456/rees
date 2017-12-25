@@ -8,6 +8,7 @@
 <html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>">
 <!--<![endif]-->
 <head>
+
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php if ($title != "heading_title") { ?>
@@ -135,11 +136,11 @@
         </div>
 
         <div id="logo" class="row">
-            <div class="col-xs-12 col-sm-2 col-md-3"></div>
-            <div class="col-xs-12 col-sm-8 col-md-6">
+            <div class="col-xs-12 col-sm-3 col-md-5"></div>
+            <div class="col-xs-12 col-sm-6 col-md-2">
                 <?php if ($logo) { ?>
                     <a href="<?php echo $home; ?>">
-                        <img id="logo_img" src="<?php echo $logofix; ?>" title="<?php echo $name; ?>"
+                        <img width="200px" id="logo_img" src="<?php echo $logofix; ?>" title="<?php echo $name; ?>"
                              alt="<?php echo $name; ?>"
                              class="img-responsive"/>
                     </a>
@@ -147,7 +148,7 @@
                     <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
                 <?php } ?>
             </div>
-            <div class="col-xs-12 col-sm-2 col-md-3"></div>
+            <div class="col-xs-12 col-sm-3 col-md-5"></div>
         </div>
 
 
@@ -178,7 +179,7 @@
                                         <?php } ?>
                                     </div>
                                     <div class="col-sm-6 hidden-xs"><img id="header_img"
-                                                                         src="http://localhost/aa/image/catalog/test.jpg">
+                                                                         src="<?= $categories[0]['image'] ?>">
                                     </div>
                                 </div>
                             </ul>
@@ -406,3 +407,23 @@
 
 
 </header>
+<!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Small Modal</button>-->
+
+<!-- Modal -->
+<div class="modal fade" id="cartModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">نتیجه</h4>
+            </div>
+            <div class="modal-body">
+                <p>کالا با موفقیت به سبد خرید شما افزوده شد</p>
+            </div>
+            <div class="modal-footer text-center" style="text-align: center">
+                <a type="button" href="index.php?route=checkout/cart" class="btn btn-default" data-dismiss="modal">مشاهده سبد خرید</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">بستن</button>
+            </div>
+        </div>
+    </div>
+</div>

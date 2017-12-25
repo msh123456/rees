@@ -40,6 +40,16 @@
                                                         <div id="input-option<?php echo $option['product_option_id']; ?>">
                                                             <?php foreach ($option['product_option_value'] as $option_value) { ?>
                                                                 <?php if ($option_value['quantity'] > 0) { ?>
+                                                                    <?php if ($option_value['name'] == "تک سایز"): ?>
+                                                                        <label disabled="bigh" class=""
+                                                                               style="cursor: pointer;">
+                                                                            <input style="display: none" type="radio"
+                                                                                   name="option[<?php echo $option['product_option_id']; ?>]"
+                                                                                   value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                                                            <?php echo $option_value['name']; ?>
+
+                                                                        </label>
+                                                                        <?php else: ?>
                                                                     <label disabled="bigh" class="op3"
                                                                            style="background-image: url('<?php echo $product_background_icon; ?> '); cursor: pointer;">
                                                                         <input style="display: none" type="radio"
@@ -52,6 +62,7 @@
                                                                                     <?php } ?>
                                                                                     -->
                                                                     </label>
+                                                                        <?php endif; ?>
                                                                 <?php } else if ($option_value['quantity'] == 0) { ?>
                                                                     <label disabled="disabled" class="op3"
                                                                            style="background-image: url('<?php echo $no_product_background_icon; ?> '); cursor: not-allowed;">

@@ -4,16 +4,17 @@
     <img id="mycontainer" class="img-responsive widthfull" src="<?= $server . 'image/' . $banner1['image']; ?>">
 <?php if (count($banner2) > 0): ?>
     <hr>
-<?php endif; ?>
+
 
     <div class="row">
         <?php foreach ($banner2 as $banner): ?>
-            <div class=" <?= $class; ?>">
+            <div class=" <?= $class; ?> text-center">
                 <a href="<?= $banner['link'] ?>"><img class="bannerHome"
-                                                      src="<?= $server . 'image' . $banner['image'] ?>"></a>
+                                                      src="<?= 'image/' . $banner['image'] ?>"></a>
             </div>
         <?php endforeach; ?>
     </div>
+<?php endif; ?>
 
     <div class="container">
         <div class="row">

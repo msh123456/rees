@@ -123,7 +123,7 @@ function checkscrol() {
 
         $("#fixed").removeClass("navbar-fixed-top"); //("hidden");
         $("#mycontainer").css("margin-top", "0px");
-        $("#logo_img").attr("width", "250px");
+        $("#logo_img").attr("width", "200px");
         // $("#notfixed").slideDown(0);//("hidden");
     }
 }
@@ -171,7 +171,6 @@ function changeMenuImage(id, src) {
     $("#" + id).attr("src", src);
 }
 $(document).ready(function () {
-
 
 
     // Adding the clear Fix
@@ -434,7 +433,7 @@ var wishlist = {
 
                 $('#wishlist-total span').html(json['total']);
                 $('#wishlist-total').attr('title', json['total']);
-                alert("کالا با موفقیت به سبد خرید شما اضافه شد.");
+                $("#cartModal").modal("toggle");
                 $('html, body').animate({scrollTop: 0}, 'slow');
             }
         });

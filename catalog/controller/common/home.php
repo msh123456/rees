@@ -22,7 +22,7 @@ class ControllerCommonHome extends Controller
         $this->load->model("design/banner");
         $data['banner1'] = $this->model_design_banner->getBanner(7, 1)[0];
 
-        $banner2 = $data['banner2'] = $this->model_design_banner->getBanner(6, 4);
+        $banner2 = $data['banner2'] = $this->model_design_banner->getBanner(8, 4);
         switch (count($banner2)) {
             case 0:
                 $class = "hidden";

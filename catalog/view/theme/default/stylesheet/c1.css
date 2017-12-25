@@ -426,7 +426,12 @@ span.glyphicon.glyphicon-search {
     top: 93% !important;
     right: 15% !important;
 }
-
+.carousel-control.left{
+  background-image: none;
+}
+.carousel-control.right{
+  background-image: none;
+}
 
 
 

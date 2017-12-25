@@ -3,18 +3,18 @@
     <div style="font-size: 11px;">
         <?php foreach ($breadcrumbs as $breadcrumb) { ?>
             <a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>  <span
-                    class="bread"> > </span>
+                class="bread"> > </span>
         <?php } ?>
     </div>
     <div class="row" style="margin-bottom: 45px;">
-        <div class="col-md-4 bascket_line_height" style="padding-left:80px;">
+        <div class="col-sm-4 col-md-4 col-xs-12 col-lg-4 bascket_line_height" style="padding-left:80px;">
             <div class="title" style="margin-top: 40px; font-size: 25px;"><?php echo $heading_title; ?></div>
             <div class="code" style="font-size: 19px;"><?php echo $text_model; ?><?php echo $model; ?> </div>
             <div class="price" style="font-size: 19px;"><?php echo $price; ?></div>
             <div class="mojoodi"> <?php echo $mojoodi; ?></div>
-            <?php if ($tax) { ?>
-                <?php echo $text_tax; ?><?php echo $tax; ?>
-            <?php } ?>
+            <!--            --><?php //if ($tax) { ?>
+            <!--                --><?php //echo $text_tax; ?><!----><?php //echo $tax; ?>
+            <!--            --><?php //} ?>
 
 
             <div id="product" style="margin-top: 56px;">
@@ -31,7 +31,8 @@
                                         class="form-control">
                                     <option value=""><?php echo $text_select; ?></option>
                                     <?php foreach ($option['product_option_value'] as $option_value) { ?>
-                                        <option value="<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
+                                        <option
+                                            value="<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
                                             <?php if ($option_value['price']) { ?>
                                                 (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
                                             <?php } ?>
@@ -42,7 +43,7 @@
                         <?php } ?>
 
 
-                        <?php if ($option['type'] == 'radio' && ($option['name']!= "سایز" && $option['name']!= "size")) { ?>
+                        <?php if ($option['type'] == 'radio' && ($option['name'] != "سایز" && $option['name'] != "size")) { ?>
                             <div class="form-group<?php echo($option['required'] ? ' required' : ''); ?>">
                                 <label class="control-label"><?php echo $option['name']; ?></label>
                                 <div id="input-option<?php echo $option['product_option_id']; ?>">
@@ -73,18 +74,33 @@
                                             <div>
                                                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                                                     <?php if ($option_value['quantity'] > 0) { ?>
-                                                        <label disabled="bigh" class="op2"
-                                                               style="background-image: url('<?php echo $product_background_icon; ?> '); cursor: pointer;">
-                                                            <input style="display: none" type="radio"
-                                                                   name="option[<?php echo $option['product_option_id']; ?>]"
-                                                                   value="<?php echo $option_value['product_option_value_id']; ?>"/>
-                                                            <?php echo $option_value['name']; ?>
-                                                            <!--
+                                                        <?php if ($option_value['name'] == "تک سایز"): ?>
+                                                            <label disabled="bigh" class=""
+                                                                   style="cursor: pointer;">
+                                                                <input style="display: none" type="radio"
+                                                                       name="option[<?php echo $option['product_option_id']; ?>]"
+                                                                       value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                                                <?php echo $option_value['name']; ?>
+                                                                <!--
                                                             <?php if ($option_value['price']) { ?>
                                                                                                                 (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
                                                             <?php } ?>
                                                             -->
-                                                        </label>
+                                                            </label>
+                                                        <?php else: ?>
+                                                            <label disabled="bigh" class="op2"
+                                                                   style="background-image: url('<?php echo $product_background_icon; ?> '); cursor: pointer;">
+                                                                <input style="display: none" type="radio"
+                                                                       name="option[<?php echo $option['product_option_id']; ?>]"
+                                                                       value="<?php echo $option_value['product_option_value_id']; ?>"/>
+                                                                <?php echo $option_value['name']; ?>
+                                                                <!--
+                                                            <?php if ($option_value['price']) { ?>
+                                                                                                                (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+                                                            <?php } ?>
+                                                            -->
+                                                            </label>
+                                                        <?php endif; ?>
                                                     <?php } else if ($option_value['quantity'] == 0) { ?>
                                                         <label disabled="disabled" class="op2"
                                                                style="background-image: url('<?php echo $no_product_background_icon; ?> '); cursor: not-allowed;">
@@ -181,7 +197,7 @@
                                 <button type="button" id="button-upload<?php echo $option['product_option_id']; ?>"
                                         data-loading-text="<?php echo $text_loading; ?>"
                                         class="btn btn-default btn-block"><i
-                                            class="fa fa-upload"></i> <?php echo $button_upload; ?></button>
+                                        class="fa fa-upload"></i> <?php echo $button_upload; ?></button>
                                 <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]" value=""
                                        id="input-option<?php echo $option['product_option_id']; ?>"/>
                             </div>
@@ -197,7 +213,7 @@
                                            class="form-control"/>
                                     <span class="input-group-btn">
                                         <button class="btn btn-default" type="button"><i
-                                                    class="fa fa-calendar"></i></button>
+                                                class="fa fa-calendar"></i></button>
                                     </span></div>
                             </div>
                         <?php } ?>
@@ -212,7 +228,7 @@
                                            class="form-control"/>
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-default"><i
-                                                    class="fa fa-calendar"></i></button>
+                                                class="fa fa-calendar"></i></button>
                                     </span></div>
                             </div>
                         <?php } ?>
@@ -227,7 +243,7 @@
                                            class="form-control"/>
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-default"><i
-                                                    class="fa fa-calendar"></i></button>
+                                                class="fa fa-calendar"></i></button>
                                     </span></div>
                             </div>
                         <?php } ?>
@@ -239,7 +255,8 @@
                         <select name="recurring_id" class="form-control">
                             <option value=""><?php echo $text_select; ?></option>
                             <?php foreach ($recurrings as $recurring) { ?>
-                                <option value="<?php echo $recurring['recurring_id'] ?>"><?php echo $recurring['name'] ?></option>
+                                <option
+                                    value="<?php echo $recurring['recurring_id'] ?>"><?php echo $recurring['name'] ?></option>
                             <?php } ?>
                         </select>
                         <div class="help-block" id="recurring-description"></div>
@@ -259,22 +276,41 @@
                 <?php } ?>
             </div>
 
+            <?php if (count($attribute_groups) > 0) { ?>
+            <h4 style="margin-top: 35px;">توضیحات</h4>
+            <?php } ?>
+            <div class="explainDiv row">
+                <div class=" col-xs-12">
+                    <?php if (count($attribute_groups) > 0) { ?>
+                    <div style="max-width: 100%">
+                        <table class="text-left table">
+                            <tbody>
+                            <?php foreach ($attribute_groups as $attribute) { ?>
+                                <tr>
+                                    <td>
+                                        <b><?= $attribute['name'] ?>:</b>
+                                    </td>
+                                    <?php foreach ($attribute['attribute'] as $attr): ?>
+                                        <td>
+                                            <?= " " . $attr['name'] . " - " . $attr['text'] ?>
+                                        </td>
+                                    <?php endforeach; ?>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <?php } ?>
+                </div>
 
-            <!--<h4 style="margin-top: 35px;">توضیحات</h4>-->
-            <div class="explain">
+            </div>
+
+
+            <!--
+           <div class="explain">
                 <p>
                 <div class="<?php echo $class; ?>">
-
-                    <!--                    <ul class="nav nav-tabs">
-                                            <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
-                    <?php if ($attribute_groups) { ?>
-                                                                                <li><a href="#tab-specification" data-toggle="tab"><?php echo $tab_attribute; ?></a></li>
-                    <?php } ?>
-                    <?php if ($review_status) { ?>
-                                                                                <li><a href="#tab-review" data-toggle="tab"><?php echo $tab_review; ?></a></li>
-                    <?php } ?>
-                                        </ul>-->
-                    <div class="tab-content">
+                   <div class="tab-content">
                         <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
                         <?php if ($attribute_groups) { ?>
                             <div class="tab-pane" id="tab-specification">
@@ -360,17 +396,17 @@
                     </div>
                 </div>
                 </p>
-            </div>
+            </div> -->
 
 
         </div>
-        <div class="col-md-8">
 
-            <div class="row">
-                <div class="hidden-xs col-xs-9">
+        <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+            <div class="row hidden-xs ">
+                <div class="col-xs-9">
                     <div><img class="mbp" id='modal_big_pic<?php echo $data['product_id']; ?>' width="100%"></div>
                 </div>
-                <div class="col-xs-3 hidden-xs text-center" id='get_height<?php echo $data['product_id']; ?>'>
+                <div class="col-xs-3 text-center" id='get_height<?php echo $data['product_id']; ?>'>
                     <?php
                     $c = 0;
                     foreach ($data['product_images'] as $image) {
@@ -380,14 +416,53 @@
                             echo ' first ';
                         ?> bascket_margin_padding hand modal_small_pic modal_right_border"
                              onclick="$('.arrow_box').removeClass('arrow_box');
-                                     $(this).addClass('arrow_box');
-                                     $('#modal_big_pic<?php echo $data['product_id']; ?>').attr('src', '<?php echo $image['image']; ?>');">
+                                 $(this).addClass('arrow_box');
+                                 $('#modal_big_pic<?php echo $data['product_id']; ?>').attr('src', '<?php echo $image['image']; ?>');">
                             <img class="bascket_right_border " width="88px" src="<?php echo $image['image']; ?>">
                         </div>
                     <?php } ?>
                 </div>
             </div>
+
+            <div class="row ">  <!--hidden-lg hidden-md -->
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <?php $c=0; foreach ($images as $image): ?>
+                        <li data-target="#myCarousel" data-slide-to="<?= $c ?>" class="<?php if($c++==0) echo 'active'; ?>"></li>
+                        <?php endforeach; ?>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <?php $c=0; foreach ($images as $image): ?>
+                            <div class="item <?php if($c++==0) echo 'active'; ?>">
+                                <img
+                                    src="<?= 'image/'.$image['thumb'] ?>"
+                                    alt="تصویر محصول">
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <!-- Left and right controls -->
+
+                    <a class="left carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </div>
+
+
+
+            </div>
+
         </div>
+
+
     </div>
     <?php if ($products): ?>
         <div class="cdiv">
@@ -401,13 +476,13 @@
                 <?php include 'productModal.php'; ?>
 
                 <div onmouseout="hide('.ctext<?php echo $product['product_id']; ?>');
-                        hide('#s<?php echo $product['product_id']; ?>');
-                        show('#sm<?php echo $product['product_id']; ?>');"
+                    hide('#s<?php echo $product['product_id']; ?>');
+                    show('#sm<?php echo $product['product_id']; ?>');"
 
                      onmouseover="show('.ctext<?php echo $product['product_id']; ?>');
-                             show('#s<?php echo $product['product_id']; ?>');
-                             hide('#sm<?php echo $product['product_id']; ?>');"
-                     class="col-lg-15 col-md-15 col-sm-6 col-xs-12 featurePadding">
+                         show('#s<?php echo $product['product_id']; ?>');
+                         hide('#sm<?php echo $product['product_id']; ?>');"
+                     class="col-lg-15 col-md-15 col-sm-3 col-xs-6 featurePadding">
 
                     <div class="text-center">
                         <a href="<?php echo $product['href']; ?>">
@@ -423,7 +498,7 @@
                          id="text">
                         <div id="child">
                             <a class="marginok hand" onclick="cart.add(<?php echo $product['product_id']; ?>)"><img
-                                        width="18px" height="21px" src="<?php echo $cart_icon; ?>"></a>
+                                    width="18px" height="21px" src="<?php echo $cart_icon; ?>"></a>
                             <a class="marginok hand" href="" data-toggle="modal"
                                data-target="#myModal<?php echo $product['product_id']; ?>"><img width="18px"
                                                                                                 height="18px"
@@ -435,7 +510,8 @@
                     <div class="text-center p2_margin_pro_details"><?php echo $product['price']; ?></div>
 
 
-                    <div class="text-center p2_margin_pro_details" id="s<?php echo $product['product_id']; ?>">
+                    <div style="display: none" class="text-center p2_margin_pro_details"
+                         id="s<?php echo $product['product_id']; ?>">
 
 
                         <?php
@@ -454,11 +530,13 @@
                                 <?php foreach ($option['product_option_value'] as $opval) { ?>
                                     <?php if (strtolower($option['name']) == "size" || $option['name'] == "سایز") { ?>
                                         <?php if ($opval['quantity'] <= 0) { ?>
-                                            <label style="background-image: url('<?php echo $no_product_background_icon; ?> '); cursor: not-allowed;"
-                                                   class="op"><?php echo $opval['name']; ?></label>
+                                            <label
+                                                style="background-image: url('<?php echo $no_product_background_icon; ?> '); cursor: not-allowed;"
+                                                class="op"><?php echo $opval['name']; ?></label>
                                         <?php } else { ?>
-                                            <label style="background-image: url('<?php echo $product_background_icon; ?>')"
-                                                   class="op"><?php echo $opval['name']; ?></label>
+                                            <label
+                                                style="background-image: url('<?php echo $product_background_icon; ?>')"
+                                                class="op"><?php echo $opval['name']; ?></label>
                                         <?php } ?>
                                     <?php } ?>
                                 <?php } ?>
@@ -996,7 +1074,7 @@
                     $('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
                     $('#cart > button').html('<i class="fa fa-shopping-cart"></i> ' + json['total']);
-                    alert("کالا با موفقیت به سبد خرید شما اضافه شد.");
+                    $("#cartModal").modal("toggle");
                     $('html, body').animate({scrollTop: 0}, 'slow');
 
                     $('#cart > ul').load('index.php?route=common/cart/info ul li');
