@@ -427,12 +427,16 @@ span.glyphicon.glyphicon-search {
     right: 15% !important;
 }
 .carousel-control.left{
-  background-image: none;
+ width:7%;
+    background-image: none;
 }
 .carousel-control.right{
-  background-image: none;
+    width: 7%;
+    background-image: none;
 }
-
+.modal-dialog{
+    margin:0 auto;
+}
 
 
 

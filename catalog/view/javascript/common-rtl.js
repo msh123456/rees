@@ -142,6 +142,8 @@ $(window).resize(function () {
     else
         $("[id*='myimage']").css('display', 'block');
 });
+//key is the name of GET parameter. Enter key name of GET parameter
+// and the function returns the value of that parameter
 function getURLVar(key) {
     var value = [];
 

@@ -9,6 +9,7 @@
 <!--<![endif]-->
 <head>
 
+
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php if ($title != "heading_title") { ?>
@@ -66,6 +67,7 @@
         <script src="<?php echo $script; ?>" type="text/javascript"></script>
     <?php } ?>
     <?php echo $google_analytics; ?>
+    <script src="catalog/view/javascript/carouselSwip.js" type="text/javascript"></script>
 </head>
 <body class="<?php echo $class; ?>">
 
@@ -78,7 +80,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- this will show when scrol is down -->
 
@@ -192,19 +193,19 @@
                                     <div class="col-sm-6">
 
                                         <div class="menu-collection-row"
-                                             onmouseover="$('#rahnamayekharidImg').attr('src', 'image/catalog/test.jpg')">
+                                             onmouseover="$('#rahnamayekharidImg').attr('src', '<?= $server ?>image/data/1208/IMG_3506 copy.jpg')">
                                             <a href="index.php?route=information/information&information_id=5">نحوه
                                                 سفارش</a>
                                         </div>
                                         <div class="menu-collection-row"
-                                             onmouseover="$('#rahnamayekharidImg').attr('src', 'image/catalog/test2.jpg')">
+                                             onmouseover="$('#rahnamayekharidImg').attr('src', '<?= $server ?>image/data/1277/IMG_3332.jpg')">
                                             <a href="index.php?route=information/information&information_id=9">شرایط
                                                 ارسال</a>
                                         </div>
 
                                     </div>
-                                    <div class="col-sm-6 hidden-xs"><img id="header_img"
-                                                                         src="http://localhost/aa/image/catalog/test.jpg">
+                                    <div class="col-sm-6 hidden-xs"><img id="rahnamayekharidImg"
+                                                                         src="<?= $server ?>image/data/1277/IMG_3332.jpg">
                                     </div>
                                 </div>
                             </ul>

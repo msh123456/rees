@@ -277,29 +277,29 @@
             </div>
 
             <?php if (count($attribute_groups) > 0) { ?>
-            <h4 style="margin-top: 35px;">توضیحات</h4>
+                <h4 style="margin-top: 35px;">توضیحات</h4>
             <?php } ?>
             <div class="explainDiv row">
                 <div class=" col-xs-12">
                     <?php if (count($attribute_groups) > 0) { ?>
-                    <div style="max-width: 100%">
-                        <table class="text-left table">
-                            <tbody>
-                            <?php foreach ($attribute_groups as $attribute) { ?>
-                                <tr>
-                                    <td>
-                                        <b><?= $attribute['name'] ?>:</b>
-                                    </td>
-                                    <?php foreach ($attribute['attribute'] as $attr): ?>
+                        <div style="max-width: 100%">
+                            <table class="text-left table">
+                                <tbody>
+                                <?php foreach ($attribute_groups as $attribute) { ?>
+                                    <tr>
                                         <td>
-                                            <?= " " . $attr['name'] . " - " . $attr['text'] ?>
+                                            <b><?= $attribute['name'] ?>:</b>
                                         </td>
-                                    <?php endforeach; ?>
-                                </tr>
-                            <?php } ?>
-                            </tbody>
-                        </table>
-                    </div>
+                                        <?php foreach ($attribute['attribute'] as $attr): ?>
+                                            <td>
+                                                <?= " " . $attr['name'] . " - " . $attr['text'] ?>
+                                            </td>
+                                        <?php endforeach; ?>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     <?php } ?>
                 </div>
 
@@ -402,7 +402,7 @@
         </div>
 
         <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
-            <div class="row hidden-xs ">
+            <div class="row hidden-xs hidden-sm ">
                 <div class="col-xs-9">
                     <div><img class="mbp" id='modal_big_pic<?php echo $data['product_id']; ?>' width="100%"></div>
                 </div>
@@ -423,22 +423,28 @@
                     <?php } ?>
                 </div>
             </div>
+            <script>
+                $("#myCarousel").carousel()
+            </script>
 
-            <div class="row ">  <!--hidden-lg hidden-md -->
+            <div class="row hidden-lg hidden-md ">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
-                        <?php $c=0; foreach ($images as $image): ?>
-                        <li data-target="#myCarousel" data-slide-to="<?= $c ?>" class="<?php if($c++==0) echo 'active'; ?>"></li>
+                        <?php $c = 0;
+                        foreach ($images as $image): ?>
+                            <li data-target="#myCarousel" data-slide-to="<?= $c ?>"
+                                class="<?php if ($c++ == 0) echo 'active'; ?>"></li>
                         <?php endforeach; ?>
                     </ol>
 
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
-                        <?php $c=0; foreach ($images as $image): ?>
-                            <div class="item <?php if($c++==0) echo 'active'; ?>">
+                        <?php $c = 0;
+                        foreach ($images as $image): ?>
+                            <div class="item <?php if ($c++ == 0) echo 'active'; ?>">
                                 <img
-                                    src="<?= 'image/'.$image['thumb'] ?>"
+                                    src="<?= 'image/' . $image['thumb'] ?>"
                                     alt="تصویر محصول">
                             </div>
                         <?php endforeach; ?>
@@ -455,14 +461,8 @@
                         <span class="sr-only">Previous</span>
                     </a>
                 </div>
-
-
-
             </div>
-
         </div>
-
-
     </div>
     <?php if ($products): ?>
         <div class="cdiv">
@@ -490,7 +490,6 @@
                                  alt="<?php echo $product['name']; ?>"
                                  title="<?php echo $product['name']; ?>"
                                  class="img-responsive"/>
-
                         </a>
                     </div>
 

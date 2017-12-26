@@ -471,6 +471,7 @@ class ControllerProductProduct extends Controller {
             $results = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);
 
             foreach ($results as $result) {
+                $attributes = $this->model_catalog_product->getProductAttributes($result['product_id']);
                 $imagess = $this->model_catalog_product->getProductImages($result['product_id']);
                 for ($i = 0; $i < count($imagess); $i++) {
                     $imagess[$i]['image'] = $server . 'image/' . $imagess[$i]['image'];
@@ -538,17 +539,6 @@ class ControllerProductProduct extends Controller {
                     }
                 }
 
-
-
-
-
-
-
-
-
-
-
-
                 $data['products'][] = array(
                     'product_id' => $result['product_id'],
                     'thumb' => $image,
@@ -564,6 +554,7 @@ class ControllerProductProduct extends Controller {
                     'model' => $result['model'],
                     'mojoodi' => $result['stock_status'],
                     'options' => $popupOptions,
+                    'attributes'=>$attributes
                     
                 );
             }
