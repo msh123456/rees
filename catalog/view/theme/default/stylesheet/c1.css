@@ -438,6 +438,10 @@ span.glyphicon.glyphicon-search {
     margin:0 auto;
 }
 
+.modal-backdrop.in{
+    opacity:0.5;
+}
+
 
 
 
