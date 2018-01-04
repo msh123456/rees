@@ -1,6 +1,5 @@
 <?php echo $header; ?>
 
-
     <img id="mycontainer" class="img-responsive widthfull" src="<?= $server . 'image/' . $banner1['image']; ?>">
 <?php if (count($banner2) > 0): ?>
     <hr>
@@ -33,7 +32,6 @@
         </div>
     </div>
 <?php echo $footer; ?>
-
 <?php /*
  //The first modal when user first enters
 if (!isset($_SESSION['taze_vared'])):

@@ -81,9 +81,30 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- this will show when scrol is down -->
 
     <div style="background-color: white;" id="fixed">
+
+
+
+
+
         <div class="container row">
             <div class="col-xs-6">
                 <div class="hand pull-left">

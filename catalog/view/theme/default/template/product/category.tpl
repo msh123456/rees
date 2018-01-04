@@ -37,13 +37,13 @@
         </div>
         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 p2_col_left">
             <div class="p2_top">
-                <div class="col-xs-7">
+                <div class="col-xs-12 col-md-8">
                     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
                     <a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a> <span
                             class="bread"> > </span>
                     <?php } ?>
                 </div>
-                <div class="col-xs-5 top_sort  p2_top">
+                <div class="col-xs-12 col-md-4 top_sort  p2_top">
                     <span class="sort">   مرتب کردن بر اساس قیمت</span>
                     <a href="<?php echo $sorts['3']['href']; ?>" class="sort_option">کم به زیاد</a>
 

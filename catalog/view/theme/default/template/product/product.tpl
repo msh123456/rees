@@ -7,7 +7,7 @@
         <?php } ?>
     </div>
     <div class="row" style="margin-bottom: 45px;">
-        <div class="col-sm-4 col-md-4 col-xs-12 col-lg-4 bascket_line_height" style="padding-left:80px;">
+        <div class="col-sm-4 col-md-3 col-xs-12 col-lg-3 bascket_line_height">
             <div class="title" style="margin-top: 40px; font-size: 25px;"><?php echo $heading_title; ?></div>
             <div class="code" style="font-size: 19px;"><?php echo $text_model; ?><?php echo $model; ?> </div>
             <div class="price" style="font-size: 19px;"><?php echo $price; ?></div>
@@ -401,7 +401,7 @@
 
         </div>
 
-        <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+        <div class="col-sm-8 col-md-9 col-xs-12 col-lg-9">
             <div class="row hidden-xs hidden-sm ">
                 <div class="col-xs-9">
                     <div><img class="mbp" id='modal_big_pic<?php echo $data['product_id']; ?>' width="100%"></div>
