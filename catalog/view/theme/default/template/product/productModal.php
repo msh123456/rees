@@ -17,7 +17,43 @@
                             <p>کد:<?php echo $product['model']; ?></p>
                         </div>
                         <div class="t3">
-                            <p><?php echo $product['price']; ?></p>
+                            <p>
+	
+	
+	
+	
+	
+	
+										 <?php if ($product['special'] == null): ?>
+											 <?= $product['price'] ?>
+										 <?php else: ?>
+
+                            <div class="price_vije_margin" style="color: red; display: inline-block">
+										 <?= $product['percent']; ?>
+                            </div>
+                            <div class="price_vije_margin"
+                                 style="color: black; text-decoration: line-through; display: inline-block">
+										 <?= str_replace("تومان", "", $product['price']); ?>
+                            </div>
+                            <div class="text-center p2_margin_pro_details price_vije_margin"
+                                 style="color: black; text-decoration: none; display: inline-block;"><?php echo $product['special']; ?>
+                            </div>
+	
+									<?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            </p>
                         </div>
                         <div class="t35">
                             <p><?php echo $product['mojoodi']; ?></p>

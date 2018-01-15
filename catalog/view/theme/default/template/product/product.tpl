@@ -10,7 +10,50 @@
         <div class="col-sm-4 col-md-3 col-xs-12 col-lg-3 bascket_line_height">
             <div class="title" style="margin-top: 40px; font-size: 25px;"><?php echo $heading_title; ?></div>
             <div class="code" style="font-size: 19px;"><?php echo $text_model; ?><?php echo $model; ?> </div>
-            <div class="price" style="font-size: 19px;"><?php echo $price; ?></div>
+            <div class="price" style="font-size: 19px;">
+	
+	
+	
+	
+	
+	
+	
+	
+					<?php if ($special == null): ?>
+                   <?= $price ?>
+					<?php else: ?>
+                
+                    <div class="price_vije_margin" style="color: red; display: inline-block">
+							  <?= $percent; ?>
+                    </div>
+                    <div class="price_vije_margin"
+                         style="color: black; text-decoration: line-through; display: inline-block">
+							  <?= str_replace("تومان", "", $price); ?>
+                    </div>
+                    <div class="text-center p2_margin_pro_details price_vije_margin"
+                         style="color: black; text-decoration: none; display: inline-block;"><?php echo $special; ?>
+                    </div>
+                
+						  <?php endif; ?>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </div>
             <div class="mojoodi"> <?php echo $mojoodi; ?></div>
             <!--            --><?php //if ($tax) { ?>
             <!--                --><?php //echo $text_tax; ?><!----><?php //echo $tax; ?>

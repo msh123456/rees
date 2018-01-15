@@ -356,6 +356,7 @@ class ControllerProductProduct extends Controller {
 
             if ((float) $product_info['special']) {
                 $data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')));
+                $data['percent'] = "%".round(100-($data['special']/$data['price'])*100,0);
             } else {
                 $data['special'] = false;
             }

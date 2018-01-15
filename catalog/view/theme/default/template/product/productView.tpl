@@ -38,7 +38,8 @@
                    </div>
                </div>
 
-               <div class="text-center p2_margin_pro_details"><?php echo $product['name']; ?></div>
+               <div class="text-center p2_margin_pro_details"><?php echo $product['name']; ?>
+               </div>
 				  <?php if ($product['special'] == null): ?>
                   <div class="text-center p2_margin_pro_details"><?= $product['price'] ?></div>
 				  <?php else: ?>
@@ -46,8 +47,9 @@
                       <div class="price_vije_margin" style="color: red; display: inline-block">
 								 <?= $product['percent']; ?>
                       </div>
-                      <div class="price_vije_margin" style="color: black; text-decoration: line-through; display: inline-block">
-                         <?= str_replace("تومان", "", $product['price']); ?>
+                      <div class="price_vije_margin"
+                           style="color: black; text-decoration: line-through; display: inline-block">
+								 <?= str_replace("تومان", "", $product['price']); ?>
                       </div>
                       <div class="text-center p2_margin_pro_details price_vije_margin"
                            style="color: black; text-decoration: none; display: inline-block;"><?php echo $product['special']; ?>
@@ -63,14 +65,14 @@
 						
 						<?php
 						$size_counter = 0;
-								$size_counter = 0;
-								foreach ($product['options'] as $option) {
-									if (strtolower($option['name']) == "size" || $option['name'] == "سایز")
-										foreach ($option['product_option_value'] as $opval) {
-											if ($opval['quantity'] > 0)
-												$size_counter++;
-										}
+						$size_counter = 0;
+						foreach ($product['options'] as $option) {
+							if (strtolower($option['name']) == "size" || $option['name'] == "سایز")
+								foreach ($option['product_option_value'] as $opval) {
+									if ($opval['quantity'] > 0)
+										$size_counter++;
 								}
+						}
 						if ($size_counter == 0) { ?>
                       <label class="text-center" style="color:red; font-size: 14px;"> ناموجود </label>
 						
