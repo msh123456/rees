@@ -263,11 +263,12 @@ class ControllerProductCategory extends Controller
                 if ($product_info['quantity'] <= 0) {
                     $data['mojoodi'] = "ناموجود";
                     $data['stock'] = $product_info['stock_status'];
-                } elseif ($this->config->get('config_stock_display')) {
+//                } elseif ($this->config->get('config_stock_display')) {
+                } elseif ($product_info['quantity'] >= 4) {
                     $data['mojoodi'] = "موجود است";
                     $data['stock'] = $product_info['quantity'];
                 } else {
-                    $data['mojoodi'] = "در انبار";
+                    $data['mojoodi'] = "به تعداد محدود موجود است";
                     $data['stock'] = $this->language->get('text_instock');
                 }
 

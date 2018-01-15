@@ -6,11 +6,15 @@
             <?php foreach ($products as $product) : ?>
                 <div onmouseout="hide('.ctext<?= $product['product_id']; ?>');
                     hide('#s<?= $product['product_id']; ?>');
-                    show('#sm<?= $product['product_id']; ?>'); "
+                    show('#sm<?= $product['product_id']; ?>');
+                        $('#image<?= $product['product_id']; ?>').attr('src','<?= $product['thumb']?>');
+                        "
 
                      onmouseover="show('.ctext<?= $product['product_id']; ?>');
                          show('#s<?= $product['product_id']; ?>');
-                         hide('#sm<?= $product['product_id']; ?>');"
+                         hide('#sm<?= $product['product_id']; ?>');
+                            $('#image<?= $product['product_id']; ?>').attr('src','<?= $product['images'][1]['image'] ?>');
+                            "
                      class="col-md-4 col-xs-12 col-sm-6 col-lg-4 featurePadding2" >
 
                     <div class="text-center" >

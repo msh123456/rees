@@ -117,13 +117,13 @@ function checkscrol() {
     if (scroll > 39) {
         $("#fixed").addClass("navbar-fixed-top"); //("hidden");
         $("#mycontainer").css("margin-top", "128px");
-        $("#logo_img").attr("width", "100px");
+        //$("#logo_img").attr("width", "100px");
         //$("#notfixed").slideUp(0)//("hidden");
     } else {
 
         $("#fixed").removeClass("navbar-fixed-top"); //("hidden");
         $("#mycontainer").css("margin-top", "0px");
-        $("#logo_img").attr("width", "200px");
+        //$("#logo_img").attr("width", "200px");
         // $("#notfixed").slideDown(0);//("hidden");
     }
 }

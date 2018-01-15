@@ -1084,6 +1084,7 @@ h2.price {
     margin-top: 3px;
     box-shadow: none;
     padding-right: 15px;
+    right: -31px;
 }
 
 .myP.myBtn {
@@ -1103,7 +1104,10 @@ h2.price {
 #menuDiv > form {
     display: inline;
 }
-
+.navbar-default .navbar-toggle{
+    float: right;
+    margin-right: 25px;
+}
 .myInput {
     border-style: none none solid;
     border-width: medium medium 1px;

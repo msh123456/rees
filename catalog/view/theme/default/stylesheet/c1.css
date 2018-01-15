@@ -318,6 +318,7 @@ img{
   border:none;
     margin-bottom: 0px;
 }
+
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
     background-color: transparent !important;
 }

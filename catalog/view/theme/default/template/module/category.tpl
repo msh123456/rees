@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="row ">
+
+
         <div class="col-md-12 col-xs-12 collection_list" style="border-bottom: 1px solid #555; color: #000;">
             مجموعه ها
         </div>
@@ -9,8 +9,8 @@
             </div>
         <?php }
         ?>
-    </div>
-</div>
+
+
 
 
 

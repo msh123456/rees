@@ -188,14 +188,13 @@
                     <ul class="nav navbar-nav header-navbar-nav">
                         <li><a href="#">خانه</a></li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">کلکسیون<span
-                                    class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" >کلکسیون</a>
+                            <ul class="dropdown-menu myDropDown">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <?php foreach ($categories as $categoryy) { ?>
                                             <div class="menu-collection-row"
-                                                 onmouseover="$('#header_img').attr('src', '<?php echo $categoryy['image']; ?>')">
+                                                 onmouseover="$('#header_img').attr('src', '<?php echo $categoryy['image']; ?>');">
                                                 <a href="<?php echo $categoryy['href']; ?>"><?php echo $categoryy['name']; ?></a>
                                             </div>
                                         <?php } ?>
@@ -207,9 +206,8 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">راهنمای خرید<span
-                                    class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">راهنمای خرید</a>
+                            <ul class="dropdown-menu myDropDown">
                                 <div class="row">
                                     <div class="col-sm-6">
 
@@ -258,16 +256,21 @@
             </div>
         </nav>
 
+        <script>
 
-<!--        <script>-->
-<!--            -->
-<!--            $('ul.nav li.dropdown').hover(function () {-->
-<!--                $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(100);-->
-<!--            }, function () {-->
-<!--                $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(100);-->
-<!--            });-->
-<!--        </script>-->
+            $('ul.nav li.dropdown').hover(function () {
+                if($(window).width()>660) {
+                    $(this).find('.dropdown-menu').stop(true, true).delay(0).fadeIn(500);
+                    $("#fixed").height(390);
+                }
 
+            }, function () {
+                if($(window).width()>660) {
+                    $(this).find('.dropdown-menu').stop(true, true).delay(0).fadeOut(0);
+                    $("#fixed").height(130);
+                }
+            });
+        </script>
 
     </div>
 
@@ -443,7 +446,7 @@
                 <p>کالا با موفقیت به سبد خرید شما افزوده شد</p>
             </div>
             <div class="modal-footer text-center" style="text-align: center">
-                <a type="button" href="index.php?route=checkout/cart" class="btn btn-default" data-dismiss="modal">مشاهده سبد خرید</a>
+                <a type="button" href="index.php?route=checkout/cart" class="btn btn-default">مشاهده سبد خرید</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal">بستن</button>
             </div>
         </div>
