@@ -280,6 +280,7 @@ class ControllerProductCategory extends Controller
                     'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
                     'price' => $price,
                     'special' => $special,
+                    'percent' => "%".round(($special/$price)*100,0),
                     'tax' => $tax,
                     'minimum' => $result['minimum'] > 0 ? $result['minimum'] : 1,
                     'rating' => $result['rating'],

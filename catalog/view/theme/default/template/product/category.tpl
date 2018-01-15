@@ -31,11 +31,11 @@
 <div class="container page2_container_padding" id="mycontainer">
 
     <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 p2_col_right">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 p2_col_right">
             <?php echo $column_left; ?>
 
         </div>
-        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10 p2_col_left">
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 p2_col_left">
             <div class="p2_top">
                 <div class="col-xs-12 col-md-8">
                     <?php foreach ($breadcrumbs as $breadcrumb) { ?>

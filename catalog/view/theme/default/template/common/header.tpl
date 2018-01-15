@@ -191,7 +191,7 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#" >کلکسیون</a>
                             <ul class="dropdown-menu myDropDown">
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
                                         <?php foreach ($categories as $categoryy) { ?>
                                             <div class="menu-collection-row"
                                                  onmouseover="$('#header_img').attr('src', '<?php echo $categoryy['image']; ?>');">
@@ -209,7 +209,7 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">راهنمای خرید</a>
                             <ul class="dropdown-menu myDropDown">
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
 
                                         <div class="menu-collection-row"
                                              onmouseover="$('#rahnamayekharidImg').attr('src', '<?= $server ?>image/data/1208/IMG_3506 copy.jpg')">

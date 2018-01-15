@@ -1022,8 +1022,16 @@ h2.price {
 
 .filter-border > .list-group > .list-group-item {
     border: 0 none;
+    margin-top: 18px;
+    padding-top: 0;
 }
-
+.list-group .list-group-item .checkbox:first-child{
+    margin-top: 0;
+}
+.price_vije_margin {
+    margin-right: 5px;
+    margin-left: 5px;
+}
 #cc {
     position: relative;
 }
@@ -1337,7 +1345,7 @@ column {
     font-size: 18px;
     color: #000 !important;
     margin-top: 40px;
-    border-bottom: 2px solid !important;
+    border-bottom: 1px solid #aaaaaa !important;
 }
 
 .price_header_top {
@@ -1666,14 +1674,14 @@ label[disabled="disabled"] {
 {
     border-radius: 3px;
     width: 5px;
-    background-color: #F5F5F5;
+    background-color: #FaFaFa;
 }
 
 .list-group-item::-webkit-scrollbar-thumb
 {
     border-radius: 3px;
-    background-color: #aaaaaa;
-    border: 1px solid #aaaaaa;
+    background-color: #cccccc;
+    border: 1px solid #cccccc;
 }
 
 

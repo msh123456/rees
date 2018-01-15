@@ -43,9 +43,15 @@
                   <div class="text-center p2_margin_pro_details"><?= $product['price'] ?></div>
 				  <?php else: ?>
                   <div class="text-center p2_margin_pro_details">
-                      <div style="color: black; text-decoration: line-through; display: inline-block"><?= str_replace("تومان", "", $product['price']); ?></div>
-                      <div class="text-center p2_margin_pro_details"
-                           style="color: red; text-decoration: none; display: inline-block;"><?php echo $product['special']; ?></div>
+                      <div class="price_vije_margin" style="color: red; display: inline-block">
+								 <?= $product['percent']; ?>
+                      </div>
+                      <div class="price_vije_margin" style="color: black; text-decoration: line-through; display: inline-block">
+                         <?= str_replace("تومان", "", $product['price']); ?>
+                      </div>
+                      <div class="text-center p2_margin_pro_details price_vije_margin"
+                           style="color: black; text-decoration: none; display: inline-block;"><?php echo $product['special']; ?>
+                      </div>
                   </div>
 				  
 				  <?php endif; ?>
