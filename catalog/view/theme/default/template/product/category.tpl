@@ -41,6 +41,9 @@
         </div>
         <div id="filterBtn" class="hidden-xs col-xs-12 col-sm-3 col-md-3 col-lg-2 p2_col_right">
 			  <?php echo $column_left; ?>
+            <div style="margin-bottom: 20px;" class="col-xs-12 hidden-lg hidden-md hidden-sm text-center">
+                <button class="btn btn-basic" data-toggle="collapse" data-target="#filterBtn" onclick="$('html, body').animate({scrollTop:0}, 0);">بستن فیلتر</button>
+            </div>
 
         </div>
         <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 p2_col_left">

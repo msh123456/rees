@@ -63,15 +63,14 @@
 						
 						<?php
 						$size_counter = 0;
-						foreach ($product['options'] as $option)
-							foreach ($option['product_option_value'] as $opval) {
-								if ((strtolower($option['name']) == "size" || $option['name'] == "سایز") && $opval['quantity'] > 0)
-									$size_counter++;
-							}
-						?>
-						
-						
-						<?php
+								$size_counter = 0;
+								foreach ($product['options'] as $option) {
+									if (strtolower($option['name']) == "size" || $option['name'] == "سایز")
+										foreach ($option['product_option_value'] as $opval) {
+											if ($opval['quantity'] > 0)
+												$size_counter++;
+										}
+								}
 						if ($size_counter == 0) { ?>
                       <label class="text-center" style="color:red; font-size: 14px;"> ناموجود </label>
 						

@@ -288,24 +288,29 @@ class ControllerProductProduct extends Controller {
 
             $data['no_product_background_icon'] = $server . "image/catalog/lol.png";
             $data['product_background_icon'] = $server . "image/catalog/lol2.png";
-
-
-
-
-
-            if ($product_info['quantity'] <= 0) {
-                $data['mojoodi'] = "ناموجود";
-                $data['stock'] = $product_info['stock_status'];
-           // } elseif ($this->config->get('config_stock_display')) {
-            } elseif ($product_info['quantity'] >= 4) {
-                $data['mojoodi'] = "موجود است";
-                $data['stock'] = $product_info['quantity'];
-            } else {
-                $data['mojoodi'] = "به تعداد محدود موجود است";
-                $data['stock'] = $this->language->get('text_instock');
-            }
-
-            $this->load->model('tool/image');
+	
+	
+	
+	
+			  $options = $this->model_catalog_product->getProductOptions($product_info['product_id']);
+			  $size_counter = 0;
+			  foreach ($options as $option) {
+				  if (strtolower($option['name']) == "size" || $option['name'] == "سایز")
+					  foreach ($option['product_option_value'] as $opval) {
+						  if ($opval['quantity'] > 0)
+							  $size_counter+=$opval['quantity'];
+					  }
+			  }
+	
+			  if ($size_counter <= 0)
+				  $data['mojoodi'] = "ناموجود";
+			  elseif ($size_counter >= 4)
+				  $data['mojoodi'] = "موجود است";
+			  else
+				  $data['mojoodi'] = "به تعداد محدود موجود است";
+	
+	
+			  $this->load->model('tool/image');
 
             if ($product_info['image']) {
                 $data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height'));
