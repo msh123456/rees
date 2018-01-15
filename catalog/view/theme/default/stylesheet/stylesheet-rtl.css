@@ -1362,8 +1362,8 @@ column {
     font-size: 15px;
     font-weight: 100;
     height: 25px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
     padding-top: 4px;
     width: 25px;
     background-size: 100% 100%;
@@ -1654,6 +1654,26 @@ label[disabled="disabled"] {
 .list-group-item {
     max-height: 300px;
     overflow-y: auto;
+}
+.list-group-item::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.1);
+    border-radius: 3px;
+    background-color: #ffffff;
+}
+
+.list-group-item::-webkit-scrollbar
+{
+    border-radius: 3px;
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+.list-group-item::-webkit-scrollbar-thumb
+{
+    border-radius: 3px;
+    background-color: #aaaaaa;
+    border: 1px solid #aaaaaa;
 }
 
 
