@@ -188,7 +188,7 @@
                     <ul class="nav navbar-nav header-navbar-nav">
                         <li><a href="#">خانه</a></li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" >کلکسیون</a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" onclick="if($(window).width()>660) {location.href='<?= $server ?>/index.php?route=product/category&path=59';}" >کلکسیون</a>
                             <ul class="dropdown-menu myDropDown">
                                 <div class="row">
                                     <div class="col-sm-4">

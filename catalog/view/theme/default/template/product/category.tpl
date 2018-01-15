@@ -2,46 +2,54 @@
 
 
 <?php foreach ($products as $product) : ?>
-<?php include 'productModal.php'; ?>
+	<?php include 'productModal.php'; ?>
 
 
-<!-- Modal -->
-<div id="priceModal<?php echo $product['product_id']; ?>" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <!-- Modal -->
+    <div id="priceModal<?php echo $product['product_id']; ?>" class="modal fade" role="dialog">
+        <div class="modal-dialog">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
 
+                </div>
+                <div class="modal-body">
+                    <p>لطفا سایز مورد نظر خود را انتخاب کنید.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <p>لطفا سایز مورد نظر خود را انتخاب کنید.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+
         </div>
-
     </div>
-</div>
 <?php endforeach; ?>
 
 
 <div class="container page2_container_padding" id="mycontainer">
-
+    <style>
+        #filterBtn.in,
+        #filterBtn.collapsing {
+            display: block !important;
+        }
+    </style>
     <div class="row">
-        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 p2_col_right">
-            <?php echo $column_left; ?>
+        <div style="margin-bottom: 20px" class="col-xs-12 hidden-lg hidden-md hidden-sm">
+            <button class="btn btn-basic" data-toggle="collapse" data-target="#filterBtn">فیلتر محصولات</button>
+        </div>
+        <div id="filterBtn" class="hidden-xs col-xs-12 col-sm-3 col-md-3 col-lg-2 p2_col_right">
+			  <?php echo $column_left; ?>
 
         </div>
         <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 p2_col_left">
             <div class="p2_top">
                 <div class="col-xs-12 col-md-8">
-                    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-                    <a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a> <span
-                            class="bread"> > </span>
-                    <?php } ?>
+						 <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+                       <a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a> <span
+                               class="bread"> > </span>
+						 <?php } ?>
                 </div>
                 <div class="col-xs-12 col-md-4 top_sort  p2_top">
                     <span class="sort">   مرتب کردن بر اساس قیمت</span>
@@ -52,7 +60,7 @@
                 </div>
             </div>
             <div id="productss" class="productss">
-                <?php include "productView.tpl"; ?>
+					<?php include "productView.tpl"; ?>
             </div>
         </div>
     </div>
