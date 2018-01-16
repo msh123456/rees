@@ -60,7 +60,7 @@ class Pagination {
 				if ($page == $i) {
 					$output .= '<li class="active"><span>' . $i . '</span></li>';
 				} else {
-					$output .= '<li><a href="' . str_replace('{page}', $i, $this->url) . '">' . $i . '</a></li>';
+					$output .= "<li><a class='hand' onclick=\" $('#page').val('$i'); $('#button-filter').click();\">" . $i . '</a></li>';
 				}
 			}
 		}
