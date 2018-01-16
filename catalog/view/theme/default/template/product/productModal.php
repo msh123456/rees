@@ -149,7 +149,7 @@
                                                     </td>
                                                     <?php foreach ($attribute['attribute'] as $attr): ?>
                                                         <td>
-                                                            <?= " " . $attr['name'] . " - " . $attr['text'] ?>
+                                                            <?= " " . $attr['name'] . "  " . $attr['text'] ?>
                                                         </td>
                                                     <?php endforeach; ?>
                                                 </tr>

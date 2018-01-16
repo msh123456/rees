@@ -64,7 +64,7 @@
 						
 						
 						<?php
-						$size_counter = 0;
+
 						$size_counter = 0;
 						foreach ($product['options'] as $option) {
 							if (strtolower($option['name']) == "size" || $option['name'] == "سایز")

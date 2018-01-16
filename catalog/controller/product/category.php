@@ -215,7 +215,7 @@ class ControllerProductCategory extends Controller
 			}
 			
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
-			
+
 			$results = $this->model_catalog_product->getProducts($filter_data);
 //            $product_total=count($results);
 			if(count($results)==0 && $page>1) {
