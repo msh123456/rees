@@ -218,7 +218,11 @@ class ControllerProductCategory extends Controller
 			
 			$results = $this->model_catalog_product->getProducts($filter_data);
 //            $product_total=count($results);
-			
+			if(count($results)==0 && $page>1) {
+				$page='1';
+				$filter_data['start']='0';
+				$results = $this->model_catalog_product->getProducts($filter_data);
+			}
 			foreach ($results as $result) {
 				if ($result['image']) {
 					$image = $server . "/image/" . $result['image'];// $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
@@ -264,7 +268,7 @@ class ControllerProductCategory extends Controller
 					if (strtolower($option['name']) == "size" || $option['name'] == "سایز")
 						foreach ($option['product_option_value'] as $opval) {
 							if ($opval['quantity'] > 0)
-								$size_counter+=$opval['quantity'];
+								$size_counter += $opval['quantity'];
 						}
 				}
 				
@@ -288,6 +292,10 @@ class ControllerProductCategory extends Controller
 					$data['stock'] = $this->language->get('text_instock');
 				}
 				
+				$percent = "";
+				if ($special != null && $price > 0) {
+					$percent = "%" . (100 - round(($special / $price) * 100, 0));
+				}
 				
 				$data['products'][] = array(
 					'product_id' => $result['product_id'],
@@ -296,7 +304,7 @@ class ControllerProductCategory extends Controller
 					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
 					'price' => $price,
 					'special' => $special,
-					'percent' => "%" . (100 - round(($special / $price) * 100, 0)),
+					'percent' => $percent,
 					'tax' => $tax,
 					'minimum' => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating' => $result['rating'],

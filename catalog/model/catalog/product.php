@@ -465,7 +465,7 @@ class ModelCatalogProduct extends Model
 	
 	public function getTotalProducts($data = array())
 	{
-		$sql = "SELECT COUNT(bigh.product_id) as total FROM (SELECT p.product_id AS product_id,p.price,
+		$sql = "SELECT COUNT(DISTINCT (bigh.product_id)) as total FROM (SELECT p.product_id AS product_id,p.price,
   (SELECT
       price
     FROM dwc_product_special ps
