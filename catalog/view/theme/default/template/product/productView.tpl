@@ -76,7 +76,8 @@
 						if ($size_counter == 0) { ?>
                       <label class="text-center" style="color:red; font-size: 14px;"> ناموجود </label>
 						
-						<?php } else if ($size_counter == 1) { ?>
+						<?php } else if ($size_counter == 1
+                           && strlen($product['options'][0]['product_option_value'][0]['name'])>4) { ?>
                       <label class="taksize"> تک سایز </label>
 						<?php } else { ?>
 							<?php foreach ($product['options'] as $option) { ?>
