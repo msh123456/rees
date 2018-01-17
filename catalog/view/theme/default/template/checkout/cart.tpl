@@ -37,7 +37,8 @@
       </h1>
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <div class="table-responsive">
-          <table class="table table-bordered">
+
+          <table class=" table table-bordered">
             <thead>
               <tr>
                 <td class="text-center"><?php echo $column_image; ?></td>
@@ -95,9 +96,12 @@
               </tr>
               <?php } ?>
             </tbody>
+
           </table>
+
         </div>
       </form>
+
       <?php if ($coupon || $voucher || $reward || $shipping) { ?>
       <h2><?php echo $text_next; ?></h2>
       <p><?php echo $text_next_choice; ?></p>
@@ -117,8 +121,9 @@
         </div>
       </div>
       <div class="buttons">
-        <!--<div class="pull-left"><a href="<?php echo $continue; ?>" class="btn btn-default"><?php echo $button_shopping; ?></a></div>-->
+
         <div class="pull-right"><a href="<?php echo $checkout; ?>" class="btn btn-primary"><?php echo $button_checkout; ?></a></div>
+        <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-default" style="margin-left: 10px"><?php echo 'بازگشت به صفحه خانه'; ?></a></div>
       </div>
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
