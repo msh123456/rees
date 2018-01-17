@@ -194,7 +194,12 @@
                                     <div class="col-sm-4">
                                         <?php foreach ($categories as $categoryy) { ?>
                                             <div class="menu-collection-row"
-                                                 onmouseover="$('#header_img').attr('src', '<?php echo $categoryy['image']; ?>');">
+                                                 onmouseover="
+                                                      $('#header_img').fadeOut(200, function() {
+        $('#header_img').attr('src','<?php echo $categoryy['image']; ?>');
+                                        $('#header_img').fadeIn(200);
+                                        });
+                                                    ">
                                                 <a href="<?php echo $categoryy['href']; ?>"><?php echo $categoryy['name']; ?></a>
                                             </div>
                                         <?php } ?>
@@ -212,19 +217,30 @@
                                     <div class="col-sm-4">
 
                                         <div class="menu-collection-row"
-                                             onmouseover="$('#rahnamayekharidImg').attr('src', '<?= $server ?>image/data/1208/IMG_3506 copy.jpg')">
+                                             onmouseover="
+                                                 $('#rahnamayekharidImg').fadeOut(200, function() {
+                                                 $('#rahnamayekharidImg').attr('src','<?= $server.$howToOrderImage; ?>');
+                                                 $('#rahnamayekharidImg').fadeIn(200);
+                                                 });
+
+                                                 ">
                                             <a href="index.php?route=information/information&information_id=5">نحوه
                                                 سفارش</a>
                                         </div>
                                         <div class="menu-collection-row"
-                                             onmouseover="$('#rahnamayekharidImg').attr('src', '<?= $server ?>image/data/1277/IMG_3332.jpg')">
+                                             onmouseover="
+                                                 $('#rahnamayekharidImg').fadeOut(200, function() {
+                                                 $('#rahnamayekharidImg').attr('src','<?= $server . $sendConditionImage; ?>');
+                                                 $('#rahnamayekharidImg').fadeIn(200);
+                                                 });
+
+                                                 ">
                                             <a href="index.php?route=information/information&information_id=9">شرایط
                                                 ارسال</a>
                                         </div>
 
                                     </div>
-                                    <div class="col-sm-6 hidden-xs"><img id="rahnamayekharidImg"
-                                                                         src="<?= $server ?>image/data/1277/IMG_3332.jpg">
+                                    <div class="col-sm-6 hidden-xs"><img id="rahnamayekharidImg" src="<?= $server . $sendConditionImage; ?>">
                                     </div>
                                 </div>
                             </ul>
