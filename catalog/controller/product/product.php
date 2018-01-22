@@ -1,10 +1,12 @@
 <?php
 
-class ControllerProductProduct extends Controller {
+class ControllerProductProduct extends Controller
+{
 
     private $error = array();
 
-    public function index() {
+    public function index()
+    {
         $this->load->language('product/product');
 
         $data['breadcrumbs'] = array();
@@ -19,9 +21,9 @@ class ControllerProductProduct extends Controller {
         if (isset($this->request->get['path'])) {
             $path = '';
 
-            $parts = explode('_', (string) $this->request->get['path']);
+            $parts = explode('_', (string)$this->request->get['path']);
 
-            $category_id = (int) array_pop($parts);
+            $category_id = (int)array_pop($parts);
 
             foreach ($parts as $path_id) {
                 if (!$path) {
@@ -151,7 +153,7 @@ class ControllerProductProduct extends Controller {
         }
 
         if (isset($this->request->get['product_id'])) {
-            $product_id = (int) $this->request->get['product_id'];
+            $product_id = (int)$this->request->get['product_id'];
         } else {
             $product_id = 0;
         }
@@ -269,14 +271,12 @@ class ControllerProductProduct extends Controller {
             $data['tab_attribute'] = $this->language->get('tab_attribute');
             $data['tab_review'] = sprintf($this->language->get('tab_review'), $product_info['reviews']);
 
-            $data['product_id'] = (int) $this->request->get['product_id'];
+            $data['product_id'] = (int)$this->request->get['product_id'];
             $data['manufacturer'] = $product_info['manufacturer'];
             $data['manufacturers'] = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $product_info['manufacturer_id']);
             $data['model'] = $product_info['model'];
             $data['reward'] = $product_info['reward'];
             $data['points'] = $product_info['points'];
-
-
 
 
             if ($this->request->server['HTTPS']) {
@@ -288,29 +288,27 @@ class ControllerProductProduct extends Controller {
 
             $data['no_product_background_icon'] = $server . "image/catalog/lol.png";
             $data['product_background_icon'] = $server . "image/catalog/lol2.png";
-	
-	
-	
-	
-			  $options = $this->model_catalog_product->getProductOptions($product_info['product_id']);
-			  $size_counter = 0;
-			  foreach ($options as $option) {
-				  if (strtolower($option['name']) == "size" || $option['name'] == "سایز")
-					  foreach ($option['product_option_value'] as $opval) {
-						  if ($opval['quantity'] > 0)
-							  $size_counter+=$opval['quantity'];
-					  }
-			  }
-	
-			  if ($size_counter <= 0)
-				  $data['mojoodi'] = "ناموجود";
-			  elseif ($size_counter >= 4)
-				  $data['mojoodi'] = "موجود است";
-			  else
-				  $data['mojoodi'] = "به تعداد محدود موجود است";
-	
-	
-			  $this->load->model('tool/image');
+
+
+            $options = $this->model_catalog_product->getProductOptions($product_info['product_id']);
+            $size_counter = 0;
+            foreach ($options as $option) {
+                if (strtolower($option['name']) == "size" || $option['name'] == "سایز")
+                    foreach ($option['product_option_value'] as $opval) {
+                        if ($opval['quantity'] > 0)
+                            $size_counter += $opval['quantity'];
+                    }
+            }
+
+            if ($size_counter <= 0)
+                $data['mojoodi'] = "ناموجود";
+            elseif ($size_counter >= 4)
+                $data['mojoodi'] = "موجود است";
+            else
+                $data['mojoodi'] = "به تعداد محدود موجود است";
+
+
+            $this->load->model('tool/image');
 
             if ($product_info['image']) {
                 $data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height'));
@@ -335,12 +333,6 @@ class ControllerProductProduct extends Controller {
             $data['product_images'] = $product_images;
 
 
-
-
-
-
-
-
             foreach ($results as $result) {
                 $data['images'][] = array(
                     'popup' => $this->model_tool_image->resize($result['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height')),
@@ -354,15 +346,15 @@ class ControllerProductProduct extends Controller {
                 $data['price'] = false;
             }
 
-            if ((float) $product_info['special'] && $data['price']>0) {
+            if ((float)$product_info['special'] && $data['price'] > 0) {
                 $data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')));
-                $data['percent'] = "%".round(100-($data['special']/$data['price'])*100,0);
+                $data['percent'] = "%" . round(100 - ($data['special'] / $data['price']) * 100, 0);
             } else {
                 $data['special'] = false;
             }
 
             if ($this->config->get('config_tax')) {
-                $data['tax'] = $this->currency->format((float) $product_info['special'] ? $product_info['special'] : $product_info['price']);
+                $data['tax'] = $this->currency->format((float)$product_info['special'] ? $product_info['special'] : $product_info['price']);
             } else {
                 $data['tax'] = false;
             }
@@ -385,7 +377,7 @@ class ControllerProductProduct extends Controller {
                 if (!strcmp($option['name'], "سایز") && !strcmp($option['name'], "size")) {
                     foreach ($option['product_option_value'] as $option_value) {
                         if (!$option_value['subtract'] || ($option_value['quantity'] > 0)) {
-                            if ((($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) && (float) $option_value['price']) {
+                            if ((($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) && (float)$option_value['price']) {
                                 $price = $this->currency->format($this->tax->calculate($option_value['price'], $product_info['tax_class_id'], $this->config->get('config_tax') ? 'P' : false));
                             } else {
                                 $price = false;
@@ -415,7 +407,7 @@ class ControllerProductProduct extends Controller {
                 } else if (strcmp($option['name'], "سایز") || strcmp($option['name'], "size")) {
                     foreach ($option['product_option_value'] as $option_value) {
                         if (!$option_value['subtract'] || ($option_value['quantity'] >= 0)) {
-                            if ((($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) && (float) $option_value['price']) {
+                            if ((($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) && (float)$option_value['price']) {
                                 $price = $this->currency->format($this->tax->calculate($option_value['price'], $product_info['tax_class_id'], $this->config->get('config_tax') ? 'P' : false));
                             } else {
                                 $price = false;
@@ -465,8 +457,8 @@ class ControllerProductProduct extends Controller {
                 $data['customer_name'] = '';
             }
 
-            $data['reviews'] = sprintf($this->language->get('text_reviews'), (int) $product_info['reviews']);
-            $data['rating'] = (int) $product_info['rating'];
+            $data['reviews'] = sprintf($this->language->get('text_reviews'), (int)$product_info['reviews']);
+            $data['rating'] = (int)$product_info['rating'];
             $data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
             $data['attribute_groups'] = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
 
@@ -490,25 +482,26 @@ class ControllerProductProduct extends Controller {
                 }
 
                 if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
+
                     $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
                 } else {
                     $price = false;
                 }
 
-                if ((float) $result['special']) {
+                if ((float)$result['special']) {
                     $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
                 } else {
                     $special = false;
                 }
 
                 if ($this->config->get('config_tax')) {
-                    $tax = $this->currency->format((float) $result['special'] ? $result['special'] : $result['price']);
+                    $tax = $this->currency->format((float)$result['special'] ? $result['special'] : $result['price']);
                 } else {
                     $tax = false;
                 }
 
                 if ($this->config->get('config_review_status')) {
-                    $rating = (int) $result['rating'];
+                    $rating = (int)$result['rating'];
                 } else {
                     $rating = false;
                 }
@@ -545,10 +538,17 @@ class ControllerProductProduct extends Controller {
                         );
                     }
                 }
+                if ($result['special'] != null) {
+                    $sp = intval($result['special']);
+                    $pr = intval($result['price']);
+                    $percent = round(100 * (1 - ($sp / $pr)),0);
+                } else
+                    $percent = 0;
 
                 $data['products'][] = array(
                     'product_id' => $result['product_id'],
                     'thumb' => $image,
+                    'percent' => '%'.$percent,
                     'name' => $result['name'],
                     'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
                     'price' => $price,
@@ -561,8 +561,8 @@ class ControllerProductProduct extends Controller {
                     'model' => $result['model'],
                     'mojoodi' => $result['stock_status'],
                     'options' => $popupOptions,
-                    'attributes'=>$attributes
-                    
+                    'attributes' => $attributes
+
                 );
             }
 
@@ -687,7 +687,8 @@ class ControllerProductProduct extends Controller {
         }
     }
 
-    public function review() {
+    public function review()
+    {
         $this->load->language('product/product');
 
         $this->load->model('catalog/review');
@@ -710,7 +711,7 @@ class ControllerProductProduct extends Controller {
             $data['reviews'][] = array(
                 'author' => $result['author'],
                 'text' => nl2br($result['text']),
-                'rating' => (int) $result['rating'],
+                'rating' => (int)$result['rating'],
                 'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added']))
             );
         }
@@ -732,7 +733,8 @@ class ControllerProductProduct extends Controller {
         }
     }
 
-    public function write() {
+    public function write()
+    {
         $this->load->language('product/product');
 
         $json = array();
@@ -777,7 +779,8 @@ class ControllerProductProduct extends Controller {
         $this->response->setOutput(json_encode($json));
     }
 
-    public function getRecurringDescription() {
+    public function getRecurringDescription()
+    {
         $this->language->load('product/product');
         $this->load->model('catalog/product');
 

@@ -63,7 +63,9 @@
                 </div>
             </div>
             <div id="productss" class="productss">
+
 					<?php include "productView.tpl"; ?>
+
             </div>
         </div>
     </div>

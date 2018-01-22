@@ -83,22 +83,19 @@ class ControllerPaymentBankTransfer extends Controller
 
             if ($affectedRows > 0 && $amount>0 && $amount == (int)$order_info['total']) {
                 $comment="پرداخت با موفقیت انجام شد. مشخصات پرداخت:"."<br>";
-                $comment.="State=".$_POST['State']."<br>";
-                $comment.="StateCode=".$_POST['StateCode']."<br>";
-                $comment.="ResNum=".$_POST['ResNum']."<br>";
-                $comment.="RefNum=".$_POST['RefNum']."<br>";
-                $comment.="CID=".$_POST['CID']."<br>";
-                $comment.="RRN=".$_POST['RRN']."<br>";
-                $comment.="SecurePan=".$_POST['SecurePan']."<br>";
-                $comment.="Order_id=".$order_info['order_id']."<br>";
+                $comment.="نتیجه پرداخت: ".$_POST['State']."<br>";
+
+                $comment.="شماره پیگیری پرداخت: ".$_POST['ResNum']."<br>";
+
+                $comment.="شماره تراکنش: ".$order_info['order_id']."<br>";
                 $this->model_checkout_order->addOrderHistory($this->session->data['order_id'],2, $comment, true);
                 $this->response->redirect($this->url->link('checkout/success', '', 'SSL'));
             } else {
                 $comment="پرداخت با شکست مواجه شد. مشخصات پرداخت:"."<br>";
-                $comment.="State=".$_POST['State']."<br>";
-                $comment.="StateCode=".$_POST['StateCode']."<br>";
-                $comment.="ResNum=".$_POST['ResNum']."<br>";
-                $comment.="Order_id=".$order_info['order_id']."<br>";
+                $comment.="نتیجه پرداخت: ".$_POST['State']."<br>";
+
+                $comment.="شماره پیگیری پرداخت: ".$_POST['ResNum']."<br>";
+                $comment.="شماره تراکنش: ".$order_info['order_id']."<br>";
                 $this->model_checkout_order->addOrderHistory($this->session->data['order_id'], 17 , $comment, true);
                 $this->response->redirect($this->url->link('checkout/failure', '', 'SSL'));
             }
@@ -110,7 +107,6 @@ class ControllerPaymentBankTransfer extends Controller
 
     private function Verify()
     {
-        return 1000;
 
         if (isset($_POST['State']) && $_POST['State'] == "OK") {
             $soapclient = new soapclient('https://sep.shaparak.ir/Payments/ReferencePayment.asmx?WSDL');
