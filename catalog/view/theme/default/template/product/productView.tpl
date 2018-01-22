@@ -9,6 +9,8 @@
         <?php endforeach;
     } ?>
     <?php if (isset($pagination)): ?>
-        <div class="col-sm-12 text-left"><?php echo $pagination; ?></div>
+        <div class="text-left" style="display: inline-block"><?php echo $pagination; ?></div>
+        <div class="text-left" style="display: inline-block; margin-top: 5px; margin-right: 20px;"><?php echo $results; ?></div>
+
     <?php endif; ?>
 </div>
