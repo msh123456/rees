@@ -5,6 +5,7 @@ class ControllerCommonHeader extends Controller
     public function searchAjax()
     {
         $this->load->model("catalog/product");
+
         $searchText = $_POST['searchText'];
         if($searchText=="") {echo""; die();}
         $filter['filter_name'] = "%$searchText%";
@@ -30,8 +31,6 @@ class ControllerCommonHeader extends Controller
 
 
         //$data['login_form'] = $this->load->controller('account/login');
-
-
         $this->load->language('account/login');
 
         $data['text_forgotten'] = $this->language->get('text_forgotten');
@@ -55,6 +54,14 @@ class ControllerCommonHeader extends Controller
         $data['button_continue'] = $this->language->get('button_continue');
         $data['button_login'] = $this->language->get('button_login');
         $data['text_register'] = $this->language->get('text_register');
+
+        $this->load->model("design/banner");
+        $banner = $this->model_design_banner->getBanner(9,1);
+        $data['howToOrderImage'] = 'image'. $banner[0]['image'];
+
+        $this->load->model("design/banner");
+        $banner = $this->model_design_banner->getBanner(10,1);
+        $data['sendConditionImage'] = 'image'. $banner[0]['image'];
 
         if (isset($this->request->post['password'])) {
             $data['password'] = $this->request->post['password'];
