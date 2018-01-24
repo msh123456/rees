@@ -35,7 +35,7 @@
 
     <div class="text-center p2_margin_pro_details"><?php echo $product['name']; ?>
     </div>
-    <?php if ($product['special'] == null): ?>
+    <?php if ($product['special'] === false): ?>
         <div class="text-center p2_margin_pro_details"><?= $product['price'] ?></div>
     <?php else: ?>
         <div class="text-center p2_margin_pro_details">
