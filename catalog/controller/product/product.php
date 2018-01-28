@@ -3,8 +3,6 @@
 class ControllerProductProduct extends Controller
 {
 
-    private $error = array();
-
     public function index()
     {
         $this->load->language('product/product');
@@ -301,7 +299,7 @@ class ControllerProductProduct extends Controller
             }
 
             if ($size_counter <= 0)
-                $data['mojoodi'] = "ناموجود";
+                $data['mojoodi'] = "در انبار";
             elseif ($size_counter >= 4)
                 $data['mojoodi'] = "موجود است";
             else
@@ -351,6 +349,7 @@ class ControllerProductProduct extends Controller
                 $data['percent'] = "%" . round(100 - ($data['special'] / $data['price']) * 100, 0);
             } else {
                 $data['special'] = false;
+                $data['percent'] = "";
             }
 
             if ($this->config->get('config_tax')) {
@@ -548,7 +547,8 @@ class ControllerProductProduct extends Controller
                 $data['products'][] = array(
                     'product_id' => $result['product_id'],
                     'thumb' => $image,
-                    'percent' => "%".$percent,
+                    'percent' => $percent,
+                    'bigh' => "bigh123456",
                     'name' => $result['name'],
                     'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
                     'price' => $price,
