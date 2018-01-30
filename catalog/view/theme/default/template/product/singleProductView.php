@@ -35,12 +35,17 @@
 
     <div class="text-center p2_margin_pro_details"><?php echo $product['name']; ?>
     </div>
-    <?php if ($product['special'] === false): ?>
+    <?php if ($product['special'] == 0): ?>
         <div class="text-center p2_margin_pro_details"><?= $product['price'] ?></div>
     <?php else: ?>
         <div class="text-center p2_margin_pro_details">
             <div class="price_vije_margin" style="color: red; display: inline-block">
-                <?= $product['percent']; ?>
+                <?php
+                $sp = intval($product['special']);
+                $pr = intval($product['price']);
+                $percent = round(100 * (1 - ($sp / $pr)),0);
+                ?>
+                <?= "%".$percent; ?>
             </div>
             <div class="price_vije_margin"
                  style="color: black; text-decoration: line-through; display: inline-block">
@@ -69,7 +74,7 @@
                 }
         }
         if ($size_counter == 0) { ?>
-            <label class="text-center" style="color:red; font-size: 14px;"> ناموجود </label>
+            <label class="text-center" style="color:red; font-size: 14px;"> در انبار </label>
 
         <?php } else if ($size_counter == 1
             && strlen($product['options'][0]['product_option_value'][0]['name'])>4) { ?>
