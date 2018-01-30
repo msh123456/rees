@@ -206,7 +206,7 @@
                     </div>
                     <div class="col-md-6 col-lg-7 col-xs-12 hidden-sm hidden-xs" style="z-index: 100000;">
 
-                        <img id='modal_big_pic<?php echo $product['product_id']; ?>' width="100%">
+                        <img src="<?= $product['images'][0]['image']; ?>" id='modal_big_pic<?php echo $product['product_id']; ?>' width="100%">
 
                     </div>
                     <div class="col-md-2 hidden-sm hidden-xs " id='get_height<?php echo $product['product_id']; ?>'>
