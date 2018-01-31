@@ -40,7 +40,7 @@ class ControllerModuleFeatured extends Controller {
             foreach ($products as $product_id) {
                 $product_info = $this->model_catalog_product->getProduct($product_id);
                 if ($product_info['quantity'] <= 0) {
-                    $data['mojoodi'] = "در انبار";
+                    $data['mojoodi'] = "تمام شد";
                     $data['stock'] = $product_info['stock_status'];
                 } elseif ($this->config->get('config_stock_display')) {
                     $data['mojoodi'] = "موجود است";

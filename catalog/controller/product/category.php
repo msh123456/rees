@@ -273,7 +273,7 @@ class ControllerProductCategory extends Controller
 				}
 				
 				if ($size_counter <= 0)
-					$data['mojoodi'] = "در انبار";
+					$data['mojoodi'] = "تمام شد";
 				elseif ($size_counter >= 4)
 					$data['mojoodi'] = "موجود است";
 				else

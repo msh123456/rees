@@ -74,7 +74,7 @@
                 }
         }
         if ($size_counter == 0) { ?>
-            <label class="text-center" style="color:red; font-size: 14px;"> در انبار </label>
+            <label class="text-center" style="color:red; font-size: 14px;"> تمام شد </label>
 
         <?php } else if ($size_counter == 1
             && strlen($product['options'][0]['product_option_value'][0]['name'])>4) { ?>
