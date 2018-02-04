@@ -6,6 +6,7 @@
            <?php $percent = $product['percent']; ?>
             <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4 featurePadding2">
                 <?php include 'singleProductView.php'; ?>
+                <?php include 'productModal.php'; ?>
             </div>
         <?php endforeach;
     } ?>
