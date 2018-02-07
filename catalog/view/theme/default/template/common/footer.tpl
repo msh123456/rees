@@ -15,40 +15,40 @@
                 
                 
                 <span>
-                    <a>
+                    <a href="https://telegram.me/rees_collection">
                         <img class="footerIcon" src="<?php echo $telegram; ?>">
                     </a>
                 </span>
-            <span>
-                    <a>
-                        <img class="footerIcon" src="<?php echo $tweeter; ?>">
-                    </a>
-                </span>
-            <span>
-                    <a>
-                        <img class="footerIcon" src="<?php echo $facebook; ?>">
-                    </a>
-                </span>
-            <span>
-                    <a>
+<!--            <span>-->
+<!--                    <a>-->
+<!--                        <img class="footerIcon" src="--><?php //echo $tweeter; ?><!--">-->
+<!--                    </a>-->
+<!--                </span>-->
+<!--            <span>-->
+<!--                    <a>-->
+<!--                        <img class="footerIcon" src="--><?php //echo $facebook; ?><!--">-->
+<!--                    </a>-->
+<!--                </span>-->
+<!--            <span>-->
+                    <a href="https://www.instagram.com/rees_collection/">
                         <img class="footerIcon" src="<?php echo $instagram; ?>">
                     </a>
                 </span>
-            <span>
-                    <a>
-                        <img class="footerIcon" src="<?php echo $googlePlus; ?>">
-                    </a>
-                </span>
-            <span>
-                    <a href="#">
-                        <img class="footerIcon" src="<?php echo $pintrest; ?>">
-                    </a>
-                </span>
-            <span>
-                    <a style="display: inline" href="in.com">
-                        <img class="footerIcon" src="<?php echo $in; ?>">
-                    </a>
-                </span>
+<!--            <span>-->
+<!--                    <a>-->
+<!--                        <img class="footerIcon" src="--><?php //echo $googlePlus; ?><!--">-->
+<!--                    </a>-->
+<!--                </span>-->
+<!--            <span>-->
+<!--                    <a href="#">-->
+<!--                        <img class="footerIcon" src="--><?php //echo $pintrest; ?><!--">-->
+<!--                    </a>-->
+<!--                </span>-->
+<!--            <span>-->
+<!--                    <a style="display: inline" href="in.com">-->
+<!--                        <img class="footerIcon" src="--><?php //echo $in; ?><!--">-->
+<!--                    </a>-->
+<!--                </span>-->
                 
                 
                 
