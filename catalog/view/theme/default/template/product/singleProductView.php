@@ -1,4 +1,4 @@
-<div onmouseout="hide('.ctext<?= $product['product_id']; ?>');
+<div class="product-parent" onmouseout="hide('.ctext<?= $product['product_id']; ?>');
     hide('#s<?= $product['product_id']; ?>');
     show('#sm<?= $product['product_id']; ?>');
     $('#image<?= $product['product_id']; ?>').attr('src','<?= $product['thumb'] ?>');
@@ -9,15 +9,16 @@
          hide('#sm<?= $product['product_id']; ?>');
          $('#image<?= $product['product_id']; ?>').attr('src','<?= $product['images'][1]['image'] ?>');
          "
+     
     >
 
-    <div class="text-center">
+    <div class="text-center product-my-item">
         <a href="<?php echo $product['href']; ?>">
             <img style="margin: auto;" id="image<?= $product['product_id']; ?>"
                  src="<?php echo $product['thumb']; ?>"
                  alt="<?php echo $product['name']; ?>"
                  title="<?php echo $product['name']; ?>"
-                 class="img-responsive"/>
+                 class="img-responsive" />
 
         </a>
     </div>

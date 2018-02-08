@@ -4,7 +4,7 @@
     <?php } else { ?>
         <?php foreach ($products as $product) : ?>
            <?php $percent = $product['percent']; ?>
-            <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4 featurePadding2">
+            <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4 featurePadding2 col">
                 <?php include 'singleProductView.php'; ?>
                 <?php include 'productModal.php'; ?>
             </div>
