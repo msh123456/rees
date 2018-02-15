@@ -4962,7 +4962,6 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .pagination {
-    display: inline-block;
     padding-right: 0;
     margin: 20px 0;
     border-radius: 4px

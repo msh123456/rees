@@ -1,3 +1,4 @@
+
 <?php
 class ControllerCatalogInformation extends Controller {
 	private $error = array();

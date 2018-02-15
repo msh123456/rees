@@ -225,9 +225,9 @@ class ControllerProductCategory extends Controller
 			}
 			foreach ($results as $result) {
 				if ($result['image']) {
-					$image = $server . "/image/" . $result['image'];// $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+					$image = /*$server . "/image/" . $result['image'];*/ $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
 				} else {
-					$image = $server . "/image/no_image.png"; // $this->model_tool_image->resize('placeholder.png', $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+					$image = /*$server . "/image/no_image.png";*/ $this->model_tool_image->resize('placeholder.png', $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
 				}
 				
 				if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
@@ -259,7 +259,8 @@ class ControllerProductCategory extends Controller
 				$product_images = $this->model_catalog_product->getProductImages($result['product_id']);
 				
 				for ($i = 0; $i < count($product_images); $i++) {
-					$product_images[$i]['image'] = $server . 'image/' . $product_images[$i]['image'];
+					$product_images[$i]['image'] =  $this->model_tool_image->resize($product_images[$i]['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+                    //$server . 'image/' . $product_images[$i]['image'];
 				}
 				
 				

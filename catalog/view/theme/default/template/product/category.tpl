@@ -1,6 +1,44 @@
 <?php echo $header; ?>
 
+<script>
+    $( window ).load(function() {
+        $( window ).resize();
+    });
+    $( window ).resize(function() {
+        var height = 600;
+        if($(window).width()<200){
+            console.log("-1-1-1-1-1");
+            height=400;
+        }
+        else if($(window).width()<300){
+            console.log(00000);
+            height =  $( ".featurePadding2" ).width()*2;
+        }
+        else if($(window).width()<450){
+            console.log(1111);
+            height =   $( ".featurePadding2" ).width()*1.8;
+        }
+        else if($(window).width()<750){
+            console.log(33333);
+            height=600;
+        }
+        else if($(window).width()<1000){
+            console.log(4444);
+            height =  $( ".featurePadding2" ).width()+200;
+        }
+        else if($(window).width()<1200){
+            console.log(5555);
+            height =  $( ".featurePadding2" ).width()+230;
+        } else{
+            console.log(666666);
+            height =  $( ".featurePadding2" ).width()+280;
 
+        }
+        $('.featurePadding2').css('height',height);
+
+
+    });
+</script>
 <?php foreach ($products as $product) : ?>
 	<?php include 'productModal.php'; ?>
 
