@@ -1239,28 +1239,12 @@ column {
     margin-left: 0;
     margin-right: 0;
 }
-/*@media screen and (min-width: 768px) {*/
-    /*.featurePadding2 {*/
-        /*height: 520px;*/
-    /*}*/
-/*}*/
-/*@media screen and (min-width: 600px) {*/
-    /*.featurePadding2 {*/
-        /*height: 530px;*/
-    /*}*/
-/*}*/
-
-/*@media screen and (min-width: 992px) {*/
-    /*.featurePadding2 {*/
-        /*height: 400px;*/
-    /*}*/
-/*}*/
-
-/*@media screen and (min-width: 1170px) {*/
-    /*.featurePadding2 {*/
-        /*height: 565px;*/
-    /*}*/
-/*}*/
+#rahnamayekharidImg{
+    max-height: 240px;
+}
+#header_img{
+     max-height: 240px;
+ }
 
 
 
