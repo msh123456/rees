@@ -93,6 +93,9 @@ legend {
     font-size: 18px;
     padding: 7px 0px
 }
+#header_img{
+    max-height: 240px;
+}
 
 label {
     font-size: 12px;
@@ -157,7 +160,9 @@ div.required .control-label:before {
 #top #currency .currency-select {
     text-align: right;
 }
-
+#rahnamayekharidImg{
+    max-height: 240px;
+}
 #top #currency .currency-select:hover {
     text-shadow: none;
     color: #ffffff;
@@ -1038,8 +1043,8 @@ h2.price {
 
 .productss {
     text-align: center;
-/*float:right;
-width:100%;*/
+    /*float:right;
+    width:100%;*/
 }
 .row{
     margin-left: unset;
@@ -1239,12 +1244,28 @@ column {
     margin-left: 0;
     margin-right: 0;
 }
-#rahnamayekharidImg{
-    max-height: 240px;
-}
-#header_img{
-     max-height: 240px;
- }
+/*@media screen and (min-width: 768px) {*/
+/*.featurePadding2 {*/
+/*height: 520px;*/
+/*}*/
+/*}*/
+/*@media screen and (min-width: 600px) {*/
+/*.featurePadding2 {*/
+/*height: 530px;*/
+/*}*/
+/*}*/
+
+/*@media screen and (min-width: 992px) {*/
+/*.featurePadding2 {*/
+/*height: 400px;*/
+/*}*/
+/*}*/
+
+/*@media screen and (min-width: 1170px) {*/
+/*.featurePadding2 {*/
+/*height: 565px;*/
+/*}*/
+/*}*/
 
 
 

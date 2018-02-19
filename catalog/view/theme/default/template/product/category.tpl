@@ -1,17 +1,16 @@
 <?php echo $header; ?>
-
 <script>
     $( window ).load(function() {
         $( window ).resize();
     });
     $( window ).resize(function() {
-        var height = 600;
+        var height = 0;
         if($(window).width()<200){
             console.log("-1-1-1-1-1");
             height=400;
         }
         else if($(window).width()<300){
-            console.log(00000);
+
             height =  $( ".featurePadding2" ).width()*2;
         }
         else if($(window).width()<450){
@@ -101,7 +100,7 @@
                 </div>
             </div>
             <div id="productss" class="productss">
-
+					
 					<?php include "productView.tpl"; ?>
 
             </div>

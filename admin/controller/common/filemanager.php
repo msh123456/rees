@@ -30,14 +30,14 @@ class ControllerCommonFileManager extends Controller
 		$this->load->model('tool/image');
 		
 		// Get directories
-		$directories = glob($directory . '/' . $filter_name . '*', GLOB_ONLYDIR);
+		$directories = glob($directory . '/*' . $filter_name . '*', GLOB_ONLYDIR);
 		
 		if (!$directories) {
 			$directories = array();
 		}
 		
 		// Get files
-		$files = glob($directory . '/' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
+		$files = glob($directory . '/*' . $filter_name . '*.{jpg,jpeg,png,gif,JPG,JPEG,PNG,GIF}', GLOB_BRACE);
 		
 		if (!$files) {
 			$files = array();
@@ -53,6 +53,7 @@ class ControllerCommonFileManager extends Controller
 		$images = array_splice($images, ($page - 1) * 16, 16);
 		
 		foreach ($images as $image) {
+			$image = str_replace("//", "/", $image);
 			$name = str_split(basename($image), 14);
 			
 			if (is_dir($image)) {
@@ -65,11 +66,12 @@ class ControllerCommonFileManager extends Controller
 				if (isset($this->request->get['thumb'])) {
 					$url .= '&thumb=' . $this->request->get['thumb'];
 				}
+				
 				$exploded = explode("/", $image);
-				if ($exploded[count($exploded)-1]!="") {
-					$bigh = $exploded[count($exploded)-1];
-				}else{
-					$bigh = $exploded[count($exploded)-2];
+				if ($exploded[count($exploded) - 1] != "") {
+					$bigh = $exploded[count($exploded) - 1];
+				} else {
+					$bigh = $exploded[count($exploded) - 2];
 				}
 				$bigh = urlencode($bigh);
 				$data['images'][] = array(
@@ -87,8 +89,9 @@ class ControllerCommonFileManager extends Controller
 					$server = HTTP_CATALOG;
 				}
 				
+				
 				$data['images'][] = array(
-					'thumb' => $this->model_tool_image->resize(utf8_substr($image, utf8_strlen(DIR_IMAGE)), 100, 100),
+					'thumb' => $this->model_tool_image->resize(utf8_substr($image, utf8_strlen(DIR_IMAGE)), 100, 100) ,
 					'name' => implode(' ', $name),
 					'type' => 'image',
 					'path' => utf8_substr($image, utf8_strlen(DIR_IMAGE)),
@@ -206,7 +209,6 @@ class ControllerCommonFileManager extends Controller
 		
 		$this->response->setOutput($this->load->view('common/filemanager.tpl', $data));
 	}
-	
 	public function upload()
 	{
 		$this->load->language('common/filemanager');
@@ -255,12 +257,21 @@ class ControllerCommonFileManager extends Controller
 				// Allowed file mime types
 				$allowed = array(
 					'image/jpeg',
-					'image/pjpeg',
 					'image/png',
-					'image/x-png',
+					'image/jpg',
 					'image/gif'
 				);
-				
+				$mime = $this->request->files['file']['type'];
+				$image = $this->request->files['file']['tmp_name'];
+				if ($mime == 'image/gif') {
+					imagecreatefromgif($image);
+				} elseif ($mime == 'image/png') {
+					imagecreatefrompng($image);
+				} elseif ($mime == 'image/jpeg') {
+					imagecreatefromjpeg($image);
+				} else {
+					imagecreatefromjpeg($image);
+				}
 				if (!in_array($this->request->files['file']['type'], $allowed)) {
 					$json['error'] = $this->language->get('error_filetype');
 				}
