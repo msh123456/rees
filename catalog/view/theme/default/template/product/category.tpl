@@ -10,7 +10,7 @@
             height=400;
         }
         else if($(window).width()<300){
-
+            console.log(00000);
             height =  $( ".featurePadding2" ).width()*2;
         }
         else if($(window).width()<450){
@@ -23,14 +23,14 @@
         }
         else if($(window).width()<1000){
             console.log(4444);
-            height =  $( ".featurePadding2" ).width()+200;
+            height =  $( ".featurePadding2" ).width()+215;
         }
-        else if($(window).width()<1200){
+        else if($(window).width()<1500){
             console.log(5555);
             height =  $( ".featurePadding2" ).width()+230;
         } else{
             console.log(666666);
-            height =  $( ".featurePadding2" ).width()+280;
+            height =  600;
 
         }
         $('.featurePadding2').css('height',height);
@@ -100,7 +100,7 @@
                 </div>
             </div>
             <div id="productss" class="productss">
-					
+
 					<?php include "productView.tpl"; ?>
 
             </div>
