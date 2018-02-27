@@ -295,7 +295,7 @@ class ControllerProductCategory extends Controller
 				
 				$percent = "";
 				if ($special != null && $price > 0) {
-					$percent = "%" . (100 - round(($special / $price) * 100, 0));
+					$percent = "%" . (100 - round((intval($special) / intval($price)) * 100, 0));
 				}
 				
 				$data['products'][] = array(

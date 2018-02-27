@@ -34,7 +34,7 @@ class ControllerPaymentBankTransfer extends Controller
             $this->load->model('checkout/order');
             $order_info = $this->model_checkout_order->getOrder($this->session->data['order_id']);
             $insertData['amount'] = (int)$order_info['total'];
-            $insertData['resnum'] = md5(rand(0, 10000) + uniqid() + time());
+            $insertData['resnum'] = md5(rand(0, 10000) . uniqid() . time());
             $insertData['order_id'] = $order_info['order_id'];
             $insertData['user_id'] = $order_info['customer_id'];
             $samanInsertId = $this->model_payment_saman->insert($insertData);
