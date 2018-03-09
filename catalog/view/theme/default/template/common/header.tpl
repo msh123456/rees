@@ -372,6 +372,7 @@
             }, 700);
 
         }
+
         function searchAjax2(isfocus=0) {
 
 

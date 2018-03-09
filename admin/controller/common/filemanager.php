@@ -4,6 +4,7 @@ class ControllerCommonFileManager extends Controller
 {
 	public function index()
 	{
+
 		$this->load->language('common/filemanager');
 		
 		if (isset($this->request->get['filter_name'])) {
